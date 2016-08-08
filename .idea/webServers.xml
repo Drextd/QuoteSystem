@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b3b81cc4-fbd5-484a-9109-63168d545a5c" name="localhost" url="http://localhost/final project - wireframe">
+        <fileTransfer port="0" mountedRoot="C:\xampp\htdocs\final project - wireframe" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
