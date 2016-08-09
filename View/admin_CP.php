@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quote System</title>
-    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <title>admin_CP</title>
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
         <div id="home_header_image">
             <div id="header_image">Header Image</div>
         </div>
-        
+
         <div id="homeLogin">
             <form id="home_login_style" name="homeLoginForm" method="post" action="">
                 <div>
@@ -26,31 +26,24 @@
 
                 <div>
                     <div class="home_submit_style"></div>
-                        <input id="home_submit" type="submit" name="submit" value="Login">
+                    <input id="home_submit" type="submit" name="submit" value="Login">
                     <div class="home_submit_style"></div>
                 </div>
             </form>
         </div>
         <div class="clearAll"></div>
     </header>
-    
+
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="accountManagement.php">Account Management</a></li>
+            <li><a href="manageQuotes.php">Manage Quotes</a></li>
+            <li><a href="manageServices.php">Manage Services</a></li>
         </ul>
     </nav>
 
     <section>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
     </section>
 
     <footer>
