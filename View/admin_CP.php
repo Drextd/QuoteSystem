@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>admin_CP</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <script src="../js/script.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -44,6 +46,7 @@
     </nav>
 
     <section>
+        <div class="content_example3">List of quotes that need confirmation - printed from PHP in table form<button type="button" name="open_quote_confirm" onclick="openQuoteConfirm()">Click to confirm</button></div>
     </section>
 
     <footer>
@@ -51,6 +54,8 @@
 
 </div>
 
+<div id="grey_background"></div>
+<div id="popupbox"></div>
 
 </body>
 </html>

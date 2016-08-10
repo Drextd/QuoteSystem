@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>customer_CP</title>
+    <title>Contact Us</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
-    <script src="../js/script.js" type="text/javascript"></script>
-    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -38,16 +36,14 @@
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="startQuote.php">Start a Quote</a></li>
-            <li><a href="quoteHistory.php">Quote History</a></li>
-            <li><a href="customerDetails.php">Customer Details</a></li>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
         </ul>
     </nav>
 
     <section>
-        <div class="content_example3">display contact us info</div>
-        <div class="content_example3">display most recent quote, Quote ID, Job Category</div><button type="button" name="open_quote_recent" onclick="openQuoteRecent()">Click to confirm</button>
+        <div class="content_example3">Business Contact Details</div>
     </section>
 
     <footer>
@@ -55,8 +51,6 @@
 
 </div>
 
-<div id="grey_background"></div>
-<div id="popupbox"></div>
 
 </body>
 </html>

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>manageQuotes</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <script src="../js/script.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -36,7 +38,7 @@
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="admin_CP.php">Home</a></li>
             <li><a href="accountManagement.php">Account Management</a></li>
             <li><a href="#">Manage Quotes</a></li>
             <li><a href="manageServices.php">Manage Services</a></li>
@@ -56,7 +58,7 @@
                     <label class="manage_quote_form_label">Customer ID:</label><input class="manage_quote_form_input" type="text" name="customer_ID" placeholder="Customer ID">
                 </div>
 
-                <button id="view_quote_button" type="button" name="view_quote">View Quote</button>
+                <button id="view_quote_button" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
                 <button id="reset_quote_search_button" type="button" name="reset_quote_search">Reset Search</button>
 
             </form>
@@ -67,6 +69,9 @@
     </footer>
 
 </div>
+
+<div id="grey_background"></div>
+<div id="popupbox"></div>
 
 
 </body>
