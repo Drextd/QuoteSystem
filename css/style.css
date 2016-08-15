@@ -126,59 +126,86 @@ a{
     margin: 35px;
 }
 
-#accountManage, #manageQuote, #manageServices{
+.content_example3{
+    width: 70%;
+    height: 15%;
+    border: solid 2px black;
+    display: inline-block;
+    margin: 35px;
+    text-align: center;
+}
+
+.content_example4{
+    width: 50%;
+    border: solid 2px black;
+    display: inline-block;
+    margin: 35px;
+    text-align: center;
+}
+
+.form_style{
+    width: 100%;
+    height: 100%;
+    margin: 30px;
+}
+
+.form_container{
     width: 50%;
     height: 425px;
     border: solid 2px black;
     margin: 0 auto;
 }
 
-#account_manage_form_style, #manage_quote_form_style, #manage_service_form_style{
-    width: 100%;
-    height: 100%;
-    margin: 30px;
-}
-
-#account_manage_search_input, #manage_quote_search_input, #manage_service_search_input{
-    width: 125px;
-    margin: 25px 5px 50px 5px;
+.label_style{
+    width: 80px;
+    margin: 5px;
     display: inline-block;
-    font-size: 12px;
-
+    font-size: 14px;
 }
 
-#account_manage_search_label, #manage_quote_search_label, #manage_service_search_label{
-    width: 75px;
-    margin: 25px 5px 50px 5px;
+.input_style{
+    width: 185px;
+    margin: 5px 20px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-#search_submit {
-    margin-left: 20px;
+.search_button_style{
     width: 50px;
     height: 20px;
     display: inline-block;
     font-size: 12px;
 }
 
-.account_manage_form_input, .manage_quote_form_input, .manage_service_form_input{
-    width: 150px;
-    margin: 5px 20px;
-    display: inline-block;
-    font-size: 14px;
-
-}
-
-.account_manage_form_label, .manage_quote_form_label, .manage_service_form_label{
-    width: 85px;
-    margin: 5px;
-    display: inline-block;
-    font-size: 14px;
-}
-
-#save_changes_button, #reset_changes_button, #view_quote_button, #reset_quote_search_button{
-    margin: 25px 35px;
+.button_style{
+    margin: 25px;
     padding: 2px;
     display: inline-block;
+}
+
+#grey_background{
+    display: none;
+    background: #000000;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#popupbox{
+    display: none;
+    background: #ffffff;
+    position: absolute;
+    top: 30%;
+    right: 25%;
+    bottom: 20%;
+    left: 25%;
+}
+
+.popup_button_style{
+    margin: 5px;
+    font-size: 12px;
+    padding: 2px;
 }

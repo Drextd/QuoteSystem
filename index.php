@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Quote System</title>
     <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -37,20 +39,16 @@
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="View/services.php">Services</a></li>
+            <li><a href="View/contactUs.php">Contact Us</a></li>
         </ul>
     </nav>
 
     <section>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
-        <div class="content_example1"></div>
-        <div class="content_example2"></div>
+        <div class="content_example1">Picture</div>
+        <div class="content_example2">Business Overview</div>
+        <div class="content_example1">Picture</div>
+        <div class="content_example2">Click here for register form<button type="button" name="open_registration" onclick="openRegistration()">Click to Register</button></div>
     </section>
 
     <footer>
@@ -58,6 +56,8 @@
 
 </div>
 
+<div id="grey_background"></div>
+<div id="popupbox"></div>
 
 </body>
 </html>

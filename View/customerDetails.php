@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>accountManagement</title>
+    <title>customerDetails</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -36,19 +36,17 @@
 
     <nav>
         <ul>
-            <li><a href="admin_CP.php">Home</a></li>
-            <li><a href="#">Account Management</a></li>
-            <li><a href="manageQuotes.php">Manage Quotes</a></li>
-            <li><a href="manageServices.php">Manage Services</a></li>
+            <li><a href="customer_CP.php">Home</a></li>
+            <li><a href="startQuote.php">Start a Quote</a></li>
+            <li><a href="quoteHistory.php">Quote History</a></li>
+            <li><a href="#">Customer Details</a></li>
         </ul>
     </nav>
 
     <section>
         <div class="form_container">
             <form class="form_style" name="accountManagementForm" method="post" action="">
-                <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search customer here"><button class="search_button_style" type="submit" name="searchSubmit">Search</button>
-                </div>
+
                 <div>
                     <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
                 </div>
@@ -71,18 +69,17 @@
                     <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
                 </div>
 
-                <button class="button_style" type="button" name="save_changes">Save Changes</button>
-                <button class="button_style" type="button" name="reset_changes">Reset Changes</button>
+                <div class="content_example2">Please contact us if you would require to make changes to your details<a href="contactUS.php">Click here</a></div>
 
             </form>
         </div>
+
     </section>
 
     <footer>
     </footer>
 
 </div>
-
 
 </body>
 </html>

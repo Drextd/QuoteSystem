@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>manageServices</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <script src="../js/script.js" type="text/javascript"></script>
+    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -36,7 +38,7 @@
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="admin_CP.php">Home</a></li>
             <li><a href="accountManagement.php">Account Management</a></li>
             <li><a href="manageQuotes.php">Manage Quotes</a></li>
             <li><a href="#">Manage Services</a></li>
@@ -44,29 +46,32 @@
     </nav>
 
     <section>
-        <div id="manageServices">
-            <form id="manage_service_form_style" name="manageServiceForm" method="post" action="">
+
+        <div class="form_container">
+            
+            <form class="form_style" name="manageServiceForm" method="post" action="">
                 <div>
-                    <label id="manage_service_search_label">Search:</label><input id="manage_service_search_input" type="text" name="" placeholder="Search service here"><button id="search_service_submit" type="submit" name="searchServiceSubmit">Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search service here"><button class="search_button_style" type="submit" name="searchServiceSubmit">Search</button>
                 </div>
                 <div>
-                    <label class="manage_service_form_label">Service ID:</label><input class="manage_service_form_input" type="text" name="service_ID" placeholder="Service ID">
+                    <label class="label_style">Service ID:</label><input class="input_style" type="text" name="service_ID" placeholder="Service ID">
                 </div>
                 <div>
-                    <label class="manage_service_form_label">Job Category:</label><input class="manage_service_form_input" type="text" name="jobCategory" placeholder="Job Category">
+                    <label class="label_style">Job Category:</label><input class="input_style" type="text" name="jobCategory" placeholder="Job Category">
                 </div>
                 <div>
-                    <label class="manage_service_form_label">Job Type:</label><input class="manage_service_form_input" type="text" name="jobType" placeholder="Job Type">
+                    <label class="label_style">Job Type:</label><input class="input_style" type="text" name="jobType" placeholder="Job Type">
                 </div>
                 <div>
-                    <label class="manage_service_form_label">Job Time:</label><input class="manage_service_form_input" type="text" name="jobTime" placeholder="Job Time">
+                    <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time">
                 </div>
                 <div>
-                    <label class="manage_service_form_label">Job Price:</label><input class="manage_service_form_input" type="text" name="jobPrice" placeholder="Job Price">
+                    <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">
                 </div>
 
-                <button id="save_changes_button" type="button" name="save_changes_services">Save Changes</button>
-                <button id="reset_changes_button" type="button" name="reset_changes_services">Reset Changes</button>
+                <button class="button_style" type="button" name="save_changes_services">Save Changes</button>
+                <button class="button_style" type="button" name="reset_changes_services">Reset Changes</button>
+                <button class="button_style" type="button" name="open_add_service" onclick="openAddService()">Add Service</button>
 
             </form>
         </div>
@@ -77,6 +82,8 @@
 
 </div>
 
+<div id="grey_background"></div>
+<div id="popupbox"></div>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>manageQuotes</title>
+    <title>startQuote</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
     <script src="../js/script.js" type="text/javascript"></script>
     <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
@@ -38,41 +38,44 @@
 
     <nav>
         <ul>
-            <li><a href="admin_CP.php">Home</a></li>
-            <li><a href="accountManagement.php">Account Management</a></li>
-            <li><a href="#">Manage Quotes</a></li>
-            <li><a href="manageServices.php">Manage Services</a></li>
+            <li><a href="customer_CP.php">Home</a></li>
+            <li><a href="#">Start a Quote</a></li>
+            <li><a href="quoteHistory.php">Quote History</a></li>
+            <li><a href="customerDetails.php">Customer Details</a></li>
         </ul>
     </nav>
 
     <section>
+
         <div class="form_container">
-            <form class="form_style" name="manageQuoteForm" method="post" action="">
+            <form class="form_style" name="manageServiceForm" method="post" action="">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search quote here"><button class="search_button_style" type="submit" name="searchQuoteSubmit">Search</button>
+                    <label class="label_style">Job Category:</label><select class="input_style" name="jobCategory"><option>Dropdown to show categories</option></select>
                 </div>
                 <div>
-                    <label class="label_style">Quote ID:</label><input class="input_style" type="text" name="quote_ID" placeholder="Quote ID">
+                    <label class="label_style">Job Type:</label><select class="input_style"  name="jobType"><option>Dropdown to show job types</option></select>
                 </div>
                 <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
+                    <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time">
+                </div>
+                <div>
+                    <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">
                 </div>
 
-                <button class="button_style" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
-                <button class="button_style" type="button" name="reset_quote_search">Reset Search</button>
-
+                <button class="button_style" type="button" name="add__services">Request Quote</button>
+                <button class="button_style" type="button" name="reset_changes_services">Reset Quote</button>
             </form>
         </div>
+
+
+
+
     </section>
 
     <footer>
     </footer>
 
 </div>
-
-<div id="grey_background"></div>
-<div id="popupbox"></div>
-
 
 </body>
 </html>

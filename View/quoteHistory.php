@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>admin_CP</title>
+    <title>quoteHistory</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
-    <script src="../js/script.js" type="text/javascript"></script>
-    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -38,26 +36,25 @@
 
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="accountManagement.php">Account Management</a></li>
-            <li><a href="manageQuotes.php">Manage Quotes</a></li>
-            <li><a href="manageServices.php">Manage Services</a></li>
+            <li><a href="customer_CP.php">Home</a></li>
+            <li><a href="startQuote.php">Start a Quote</a></li>
+            <li><a href="#">Quote History</a></li>
+            <li><a href="customerDetails.php">Customer Details</a></li>
         </ul>
     </nav>
 
     <section>
-        <div class="content_example3">List of quotes that need confirmation - printed from PHP in table form<button type="button" name="open_quote_confirm" onclick="openQuoteConfirm()">Click to confirm</button></div>
+        <div class="content_example3">display quote 1 - will have pagination for more than 5</div>
+        <div class="content_example3">display quote 2</div>
+        <div class="content_example3">display quote 3</div>
+        <div class="content_example3">display quote 4</div>
+        <div class="content_example3">display quote 5</div>
     </section>
 
     <footer>
     </footer>
 
 </div>
-
-
-
-<div id="grey_background"></div>
-<div id="popupbox"></div>
 
 </body>
 </html>
