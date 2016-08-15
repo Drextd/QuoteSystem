@@ -58,8 +58,13 @@
                     <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
                 </div>
 
+<<<<<<< HEAD
                 <button class="button_style" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
                 <button class="button_style" type="button" name="reset_quote_search">Reset Search</button>
+=======
+                <button id="view_quote_button" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
+                <button id="reset_quote_search_button" type="button" name="reset_quote_search">Reset Search</button>
+>>>>>>> origin/master
 
             </form>
         </div>

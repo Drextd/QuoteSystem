@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <div class="form_container">
     <form class="form_style" name="manageQuoteFormChanges" method="post" action="">
         <div>
@@ -29,6 +30,30 @@
         </div>
         <div>
             <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">
+=======
+<div class="content_example4">
+    <form id="manage_quote_form_style" name="manageQuoteFormChanges" method="post" action="">
+        <div>
+            <label class="manage_quote_form_label">Quote ID:</label><input class="manage_quote_form_input" type="text" name="quote_ID" placeholder="Quote ID">
+        </div>
+        <div>
+            <label class="account_manage_form_label">Customer ID:</label><input class="account_manage_form_input" type="text" name="customer_ID" placeholder="Customer ID">
+        </div>
+        <div>
+            <label class="manage_service_form_label">Service ID:</label><input class="manage_service_form_input" type="text" name="service_ID" placeholder="Service ID">
+        </div>
+        <div>
+            <label class="manage_service_form_label">Job Category:</label><input class="manage_service_form_input" type="text" name="jobCategory" placeholder="Job Category">
+        </div>
+        <div>
+            <label class="manage_service_form_label">Job Type:</label><input class="manage_service_form_input" type="text" name="jobType" placeholder="Job Type">
+        </div>
+        <div>
+            <label class="manage_service_form_label">Job Time:</label><input class="manage_service_form_input" type="text" name="jobTime" placeholder="Job Time">
+        </div>
+        <div>
+            <label class="manage_service_form_label">Job Price:</label><input class="manage_service_form_input" type="text" name="jobPrice" placeholder="Job Price">
+>>>>>>> origin/master
         </div>
         <div>
             <button class="popup_button_style" type="button" name="confirmQuoteToCustomer">Confirm Changes</button>

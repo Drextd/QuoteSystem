@@ -47,9 +47,15 @@
 
     <section>
 
+<<<<<<< HEAD
         <div class="form_container">
             
             <form class="form_style" name="manageServiceForm" method="post" action="">
+=======
+        <div id="manageServices">
+            
+            <form id="manage_service_form_style" name="manageServiceForm" method="post" action="">
+>>>>>>> origin/master
                 <div>
                     <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search service here"><button class="search_button_style" type="submit" name="searchServiceSubmit">Search</button>
                 </div>
@@ -69,9 +75,15 @@
                     <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">
                 </div>
 
+<<<<<<< HEAD
                 <button class="button_style" type="button" name="save_changes_services">Save Changes</button>
                 <button class="button_style" type="button" name="reset_changes_services">Reset Changes</button>
                 <button class="button_style" type="button" name="open_add_service" onclick="openAddService()">Add Service</button>
+=======
+                <button id="save_changes_button" type="button" name="save_changes_services">Save Changes</button>
+                <button id="reset_changes_button" type="button" name="reset_changes_services">Reset Changes</button>
+                <button id="add_services_button" type="button" name="open_add_service" onclick="openAddService()">Add Service</button>
+>>>>>>> origin/master
 
             </form>
         </div>

@@ -44,6 +44,7 @@
     </nav>
 
     <section>
+<<<<<<< HEAD
         <div class="form_container">
             <form class="form_style" name="accountManagementForm" method="post" action="">
 
@@ -67,6 +68,31 @@
                 </div>
                 <div>
                     <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
+=======
+        <div id="accountManage">
+            <form id="account_manage_form_style" name="accountManagementForm" method="post" action="">
+
+                <div>
+                    <label class="account_manage_form_label">Customer ID:</label><input class="account_manage_form_input" type="text" name="customer_ID" placeholder="Customer ID">
+                </div>
+                <div>
+                    <label class="account_manage_form_label">Username:</label><input class="account_manage_form_input" type="text" name="customer_Username" placeholder="Username">
+                </div>
+                <div>
+                    <label class="account_manage_form_label">Password:</label><input class="account_manage_form_input" type="text" name="customer_Password" placeholder="Password">
+                </div>
+                <div>
+                    <label class="account_manage_form_label">First Name:</label><input class="account_manage_form_input" type="text" name="customer_First_Name" placeholder="First Name">
+                </div>
+                <div>
+                    <label class="account_manage_form_label">Last Name:</label><input class="account_manage_form_input" type="text" name="customer_Last_Name" placeholder="Last Name">
+                </div>
+                <div>
+                    <label class="account_manage_form_label">Email:</label><input class="account_manage_form_input" type="email" name="customer_Email" placeholder="Email">
+                </div>
+                <div>
+                    <label class="account_manage_form_label">Phone:</label><input class="account_manage_form_input" type="text" name="customer_Phone" placeholder="Phone">
+>>>>>>> origin/master
                 </div>
 
                 <div class="content_example2">Please contact us if you would require to make changes to your details<a href="contactUS.php">Click here</a></div>

@@ -136,6 +136,18 @@ a{
 }
 
 .content_example4{
+<<<<<<< HEAD
+=======
+    width: 50%;
+    border: solid 2px black;
+    display: inline-block;
+    margin: 35px;
+    text-align: center;
+}
+
+
+#accountManage, #manageQuote, #manageServices{
+>>>>>>> origin/master
     width: 50%;
     border: solid 2px black;
     display: inline-block;
@@ -177,8 +189,47 @@ a{
     font-size: 12px;
 }
 
+<<<<<<< HEAD
 .button_style{
     margin: 25px;
+    padding: 2px;
+=======
+.account_manage_form_input, .manage_quote_form_input, .manage_service_form_input{
+    width: 200px;
+    margin: 5px 20px;
+>>>>>>> origin/master
+    display: inline-block;
+}
+
+#grey_background{
+    display: none;
+    background: #000000;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#popupbox{
+    display: none;
+    background: #ffffff;
+    position: absolute;
+    top: 30%;
+    right: 25%;
+    bottom: 20%;
+    left: 25%;
+}
+
+<<<<<<< HEAD
+.popup_button_style{
+    margin: 5px;
+    font-size: 12px;
+    padding: 2px;
+=======
+#save_changes_button, #reset_changes_button, #view_quote_button, #reset_quote_search_button, #add_services_button{
+    margin: 25px 35px;
     padding: 2px;
     display: inline-block;
 }
@@ -208,4 +259,5 @@ a{
     margin: 5px;
     font-size: 12px;
     padding: 2px;
+>>>>>>> origin/master
 }
