@@ -57,5 +57,9 @@
 <div id="grey_background"></div>
 <div id="popupbox"></div>
 
+
+<div id="grey_background"></div>
+<div id="popupbox"></div>
+
 </body>
 </html>

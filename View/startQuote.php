@@ -47,6 +47,25 @@
 
     <section>
 
+<<<<<<< HEAD
+        <div class="form_container">
+            <form class="form_style" name="manageServiceForm" method="post" action="">
+                <div>
+                    <label class="label_style">Job Category:</label><select class="input_style" name="jobCategory"><option>Dropdown to show categories</option></select>
+                </div>
+                <div>
+                    <label class="label_style">Job Type:</label><select class="input_style"  name="jobType"><option>Dropdown to show job types</option></select>
+                </div>
+                <div>
+                    <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time">
+                </div>
+                <div>
+                    <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">
+                </div>
+
+                <button class="button_style" type="button" name="add__services">Request Quote</button>
+                <button class="button_style" type="button" name="reset_changes_services">Reset Quote</button>
+=======
         <div id="manageServices">
             <form id="manage_service_form_style" name="manageServiceForm" method="post" action="">
                 <div>
@@ -64,6 +83,7 @@
 
                 <button id="save_changes_button" type="button" name="add__services">Request Quote</button>
                 <button id="reset_changes_button" type="button" name="reset_changes_services">Reset Quote</button>
+>>>>>>> origin/master
             </form>
         </div>
 

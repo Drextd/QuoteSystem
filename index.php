@@ -17,7 +17,7 @@
         </div>
         
         <div id="homeLogin">
-            <form id="home_login_style" name="homeLoginForm" method="post" action="">
+            <form id="home_login_style" name="homeLoginForm" method="post" action="Controller/processUser.php">
                 <div>
                     <label class="home_login_label" >Username:</label><input class="home_login_input" type="text" name="home_username" placeholder="Username">
                 </div>
@@ -28,7 +28,7 @@
 
                 <div>
                     <div class="home_submit_style"></div>
-                        <input id="home_submit" type="submit" name="submit" value="Login">
+                        <button id="home_submit" type="submit" name="home_login_submit">Login</button>
                     <div class="home_submit_style"></div>
                 </div>
             </form>
@@ -40,7 +40,7 @@
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="View/services.php">Services</a></li>
-            <li><a href="View/contactUs.php">Contact Us</a></li>
+            <li><a href="View/contactUS.php">Contact Us</a></li>
         </ul>
     </nav>
 

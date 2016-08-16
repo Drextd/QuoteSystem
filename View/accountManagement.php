@@ -44,35 +44,35 @@
     </nav>
 
     <section>
-        <div id="accountManage">
-            <form id="account_manage_form_style" name="accountManagementForm" method="post" action="">
+        <div class="form_container">
+            <form class="form_style" name="accountManagementForm" method="post" action="">
                 <div>
-                    <label id="account_manage_search_label">Search:</label><input id="account_manage_search_input" type="text" name="" placeholder="Search customer here"><button id="search_submit" type="submit" name="searchSubmit">Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search customer here"><button class="search_button_style" type="submit" name="searchSubmit">Search</button>
                 </div>
                 <div>
-                    <label class="account_manage_form_label">Customer ID:</label><input class="account_manage_form_input" type="text" name="customer_ID" placeholder="Customer ID">
+                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
                 </div>
                 <div>
-                    <label class="account_manage_form_label">Username:</label><input class="account_manage_form_input" type="text" name="customer_Username" placeholder="Username">
+                    <label class="label_style">Username:</label><input class="input_style" type="text" name="customer_Username" placeholder="Username">
                 </div>
                 <div>
-                    <label class="account_manage_form_label">Password:</label><input class="account_manage_form_input" type="text" name="customer_Password" placeholder="Password">
+                    <label class="label_style">Password:</label><input class="input_style" type="text" name="customer_Password" placeholder="Password">
                 </div>
                 <div>
-                    <label class="account_manage_form_label">First Name:</label><input class="account_manage_form_input" type="text" name="customer_First_Name" placeholder="First Name">
+                    <label class="label_style">First Name:</label><input class="input_style" type="text" name="customer_First_Name" placeholder="First Name">
                 </div>
                 <div>
-                    <label class="account_manage_form_label">Last Name:</label><input class="account_manage_form_input" type="text" name="customer_Last_Name" placeholder="Last Name">
+                    <label class="label_style">Last Name:</label><input class="input_style" type="text" name="customer_Last_Name" placeholder="Last Name">
                 </div>
                 <div>
-                    <label class="account_manage_form_label">Email:</label><input class="account_manage_form_input" type="email" name="customer_Email" placeholder="Email">
+                    <label class="label_style">Email:</label><input class="input_style" type="email" name="customer_Email" placeholder="Email">
                 </div>
                 <div>
-                    <label class="account_manage_form_label">Phone:</label><input class="account_manage_form_input" type="text" name="customer_Phone" placeholder="Phone">
+                    <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
                 </div>
 
-                <button id="save_changes_button" type="button" name="save_changes">Save Changes</button>
-                <button id="reset_changes_button" type="button" name="reset_changes">Reset Changes</button>
+                <button class="button_style" type="button" name="save_changes">Save Changes</button>
+                <button class="button_style" type="button" name="reset_changes">Reset Changes</button>
 
             </form>
         </div>

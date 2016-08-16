@@ -46,20 +46,25 @@
     </nav>
 
     <section>
-        <div id="manageQuote">
-            <form id="manage_quote_form_style" name="manageQuoteForm" method="post" action="">
+        <div class="form_container">
+            <form class="form_style" name="manageQuoteForm" method="post" action="">
                 <div>
-                    <label id="manage_quote_search_label">Search:</label><input id="manage_quote_search_input" type="text" name="" placeholder="Search quote here"><button id="search_quote_submit" type="submit" name="searchQuoteSubmit">Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search quote here"><button class="search_button_style" type="submit" name="searchQuoteSubmit">Search</button>
                 </div>
                 <div>
-                    <label class="manage_quote_form_label">Quote ID:</label><input class="manage_quote_form_input" type="text" name="quote_ID" placeholder="Quote ID">
+                    <label class="label_style">Quote ID:</label><input class="input_style" type="text" name="quote_ID" placeholder="Quote ID">
                 </div>
                 <div>
-                    <label class="manage_quote_form_label">Customer ID:</label><input class="manage_quote_form_input" type="text" name="customer_ID" placeholder="Customer ID">
+                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
                 </div>
 
+<<<<<<< HEAD
+                <button class="button_style" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
+                <button class="button_style" type="button" name="reset_quote_search">Reset Search</button>
+=======
                 <button id="view_quote_button" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
                 <button id="reset_quote_search_button" type="button" name="reset_quote_search">Reset Search</button>
+>>>>>>> origin/master
 
             </form>
         </div>
