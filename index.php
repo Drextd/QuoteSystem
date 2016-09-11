@@ -8,7 +8,7 @@
     <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
-
+<div id="error_div"></div>
 <div id="container">
 
     <header>
@@ -17,13 +17,13 @@
         </div>
         
         <div id="homeLogin">
-            <form id="home_login_style" name="homeLoginForm" method="post" action="Controller/processUser.php">
+            <form id="home_login_style" name="homeLoginForm" method="post" action="Controller/processUser.php" onSubmit="return loginValidation();" novalidate>
                 <div>
-                    <label class="home_login_label" >Username:</label><input class="home_login_input" type="text" name="home_username" placeholder="Username">
+                    <label class="home_login_label" >Username:</label><input class="home_login_input" type="text" id="home_username" name="home_username" placeholder="Username" pattern="^[A-Za-z]+$">
                 </div>
 
                 <div>
-                    <label class="home_login_label" >Password:</label><input class="home_login_input" type="password" name="home_password" placeholder="Password">
+                    <label class="home_login_label" >Password:</label><input class="home_login_input" type="password" id="home_password" name="home_password" placeholder="Password" pattern="^[A-Za-z]+$">
                 </div>
 
                 <div>
@@ -52,6 +52,13 @@
     </section>
 
     <footer>
+
+        <?php
+
+        include 'View/footer.php';
+
+        ?>
+
     </footer>
 
 </div>

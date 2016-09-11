@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require ('../Controller/userSecurityCheck.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,13 @@
     <script src="../js/script.js" type="text/javascript"></script>
     <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
+
+<?php
+
+$customerUsername = $_SESSION['username'];
+
+?>
+
 <body>
 
 <div id="container">
@@ -17,21 +31,15 @@
         </div>
 
         <div id="homeLogin">
-            <form id="home_login_style" name="homeLoginForm" method="post" action="">
-                <div>
-                    <label class="home_login_label" >Username:</label><input class="home_login_input" type="text" name="home_username" placeholder="Username">
-                </div>
+            <div>
+                <label class="home_login_label" >Logged in as:</label><div id="logged_in_style"><?php echo "$customerUsername" ?></div>
+            </div>
 
-                <div>
-                    <label class="home_login_label" >Password:</label><input class="home_login_input" type="password" name="home_password" placeholder="Password">
-                </div>
-
-                <div>
-                    <div class="home_submit_style"></div>
-                    <input id="home_submit" type="submit" name="submit" value="Login">
-                    <div class="home_submit_style"></div>
-                </div>
-            </form>
+            <div>
+                <div class="home_submit_style"></div>
+                <a id="logout_style" href="../Controller/logoutProcess.php">LogOut</a>
+                <div class="home_submit_style"></div>
+            </div>
         </div>
         <div class="clearAll"></div>
     </header>
@@ -51,6 +59,13 @@
     </section>
 
     <footer>
+
+        <?php
+
+        include 'footer.php';
+
+        ?>
+
     </footer>
 
 </div>

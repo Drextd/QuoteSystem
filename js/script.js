@@ -1,3 +1,51 @@
+
+function openDelayAdmin(){
+
+    setTimeout(function (){
+        window.location.href = "../View/admin_CP.php";}, 2000);
+}
+
+function openDelayCustomer(){
+
+    setTimeout(function (){
+        window.location.href = "../View/customer_CP.php";}, 2000);
+}
+
+function loginValidation(){
+    
+    error = 0;
+    error_div.innerHTML = '';
+    
+    if(!home_username.checkValidity()) {
+        error_div.style.display = 'block';
+        error_div.innerHTML += 'Please enter a valid username<br/>';
+        error++;
+    }
+    if(home_username.value == ''){
+        error_div.style.display = 'block';
+        error_div.innerHTML += 'Please enter a username<br/>';
+        error++;
+    }
+    if(!home_password.checkValidity()) {
+        error_div.style.display = 'block';
+        error_div.innerHTML += 'Please enter a valid password<br/>';
+        error++;
+    }
+    if(home_password.value == ''){
+        error_div.style.display = 'block';
+        error_div.innerHTML += 'Please enter a password<br/>';
+        error++;
+    }
+    
+    if(error == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
 function openQuoteConfirm(){
 
     document.getElementById('grey_background').style.display = "block";

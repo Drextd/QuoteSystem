@@ -25,13 +25,13 @@ nav{
 
 section{
     width: 100%;
-    height: 800px;
+    height: 100%;
     background: lightyellow;
 }
 
 footer{
     width: 100%;
-    height: 10%;
+    min-height: 100px;
     background: lightgrey;
 }
 
@@ -61,6 +61,18 @@ footer{
 #home_login_style{
     width: 100%;
     height: 100%;
+}
+
+#logged_in_style{
+    margin: 5px;
+    display: inline-block;
+    font-size: 16px
+}
+
+#logout_style{
+    margin: 5px;
+    display: inline-block;
+    font-size: 16px;
 }
 
 .home_login_input{
@@ -136,18 +148,6 @@ a{
 }
 
 .content_example4{
-<<<<<<< HEAD
-=======
-    width: 50%;
-    border: solid 2px black;
-    display: inline-block;
-    margin: 35px;
-    text-align: center;
-}
-
-
-#accountManage, #manageQuote, #manageServices{
->>>>>>> origin/master
     width: 50%;
     border: solid 2px black;
     display: inline-block;
@@ -166,13 +166,11 @@ a{
     height: 425px;
     border: solid 2px black;
     margin: 0 auto;
-<<<<<<< HEAD
 }
 
 .label_style{
     width: 80px;
     margin: 5px;
-=======
 }
 
 .label_style{
@@ -192,28 +190,16 @@ a{
 .search_button_style{
     width: 50px;
     height: 20px;
->>>>>>> origin/master
     display: inline-block;
     font-size: 14px;
 }
 
-<<<<<<< HEAD
 .input_style{
     width: 185px;
-=======
-<<<<<<< HEAD
-.button_style{
+}
+.button_style {
     margin: 25px;
     padding: 2px;
-=======
-.account_manage_form_input, .manage_quote_form_input, .manage_service_form_input{
-    width: 200px;
->>>>>>> origin/master
-    margin: 5px 20px;
->>>>>>> origin/master
-    display: inline-block;
-<<<<<<< HEAD
-    font-size: 14px;
 }
 
 .search_button_style{
@@ -225,7 +211,6 @@ a{
 
 .button_style {
     margin: 25px;
-=======
 }
 
 #grey_background{
@@ -249,46 +234,12 @@ a{
     left: 25%;
 }
 
-<<<<<<< HEAD
-.popup_button_style{
-    margin: 5px;
-    font-size: 12px;
-    padding: 2px;
-=======
-#save_changes_button, #reset_changes_button, #view_quote_button, #reset_quote_search_button, #add_services_button{
-    margin: 25px 35px;
->>>>>>> origin/master
-    padding: 2px;
-}
-
-#grey_background{
-    display: none;
-    background: #000000;
-    opacity: .5;
+#error_div{
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: 10%;
+    right: 10%;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-#popupbox{
-    display: none;
-    background: #ffffff;
-    position: absolute;
-    top: 30%;
-    right: 25%;
-    bottom: 20%;
-    left: 25%;
-}
-
-.popup_button_style {
-    margin: 5px;
-    font-size: 12px;
-    padding: 2px;
-<<<<<<< HEAD
-}
-=======
->>>>>>> origin/master
-}
->>>>>>> origin/master

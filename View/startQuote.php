@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require ('../Controller/userSecurityCheck.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,13 @@
     <script src="../js/script.js" type="text/javascript"></script>
     <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
+
+<?php
+
+$customerUsername = $_SESSION['username'];
+
+?>
+
 <body>
 
 <div id="container">
@@ -17,21 +31,15 @@
         </div>
 
         <div id="homeLogin">
-            <form id="home_login_style" name="homeLoginForm" method="post" action="">
-                <div>
-                    <label class="home_login_label" >Username:</label><input class="home_login_input" type="text" name="home_username" placeholder="Username">
-                </div>
+            <div>
+                <label class="home_login_label" >Logged in as:</label><div id="logged_in_style"><?php echo "$customerUsername" ?></div>
+            </div>
 
-                <div>
-                    <label class="home_login_label" >Password:</label><input class="home_login_input" type="password" name="home_password" placeholder="Password">
-                </div>
-
-                <div>
-                    <div class="home_submit_style"></div>
-                    <input id="home_submit" type="submit" name="submit" value="Login">
-                    <div class="home_submit_style"></div>
-                </div>
-            </form>
+            <div>
+                <div class="home_submit_style"></div>
+                <a id="logout_style" href="../Controller/logoutProcess.php">LogOut</a>
+                <div class="home_submit_style"></div>
+            </div>
         </div>
         <div class="clearAll"></div>
     </header>
@@ -47,7 +55,6 @@
 
     <section>
 
-<<<<<<< HEAD
         <div class="form_container">
             <form class="form_style" name="manageServiceForm" method="post" action="">
                 <div>
@@ -65,34 +72,19 @@
 
                 <button class="button_style" type="button" name="add__services">Request Quote</button>
                 <button class="button_style" type="button" name="reset_changes_services">Reset Quote</button>
-=======
-        <div id="manageServices">
-            <form id="manage_service_form_style" name="manageServiceForm" method="post" action="">
-                <div>
-                    <label class="manage_service_form_label">Job Category:</label><select class="manage_service_form_input" name="jobCategory"><option>Dropdown to show categories</option></select>
-                </div>
-                <div>
-                    <label class="manage_service_form_label">Job Type:</label><select class="manage_service_form_input"  name="jobType"><option>Dropdown to show job types</option></select>
-                </div>
-                <div>
-                    <label class="manage_service_form_label">Job Time:</label><input class="manage_service_form_input" type="text" name="jobTime" placeholder="Job Time">
-                </div>
-                <div>
-                    <label class="manage_service_form_label">Job Price:</label><input class="manage_service_form_input" type="text" name="jobPrice" placeholder="Job Price">
-                </div>
-
-                <button id="save_changes_button" type="button" name="add__services">Request Quote</button>
-                <button id="reset_changes_button" type="button" name="reset_changes_services">Reset Quote</button>
->>>>>>> origin/master
             </form>
         </div>
-
-
-
 
     </section>
 
     <footer>
+
+        <?php
+
+        include 'footer.php';
+
+        ?>
+
     </footer>
 
 </div>

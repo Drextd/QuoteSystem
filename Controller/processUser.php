@@ -3,11 +3,10 @@
 session_start();
 
 include '../Model/dbConnect.php';
+include '../View/header.php';
 
 $username = $_POST['home_username'];
 $password = $_POST['home_password'];
-
-$_SESSION['error_code'] = "Incorrect Login";
 
 if(isset($_POST['home_login_submit'])) {
     $adminUsername_check_sql = "SELECT * FROM admin WHERE adminUsername = '" . $username . "' AND adminPass = '" . $password . "'";
@@ -16,10 +15,10 @@ if(isset($_POST['home_login_submit'])) {
     $result_admin = $check_adminUser->fetchColumn();
 
     if(!empty($result_admin)) {
-        $_SESSION['userid'] = $result_admin['adminID'];
-        $_SESSION['usertype'] = 'admin';
-        unset($_SESSION['error_code']);
+        $_SESSION['userid'] = $result_admin;
+        $_SESSION['username'] = $username;
         echo "Admin Login Successful";
+        echo '<script type="text/javascript">openDelayAdmin()</script>';
     }
 
     $customerUsername_check_sql = "SELECT * FROM customer WHERE customerUsername = '" . $username . "' AND customerPass = '" . $password . "'";
@@ -28,15 +27,13 @@ if(isset($_POST['home_login_submit'])) {
     $result_customer = $check_customerUser->fetchColumn();
 
     if(!empty($result_customer)) {
-        $_SESSION['userid'] = $result_customer['customerID'];
-        $_SESSION['usertype'] = 'customer';
-        unset($_SESSION['error_code']);
+        $_SESSION['userid'] = $result_customer;
+        $_SESSION['username'] = $username;
         echo "Customer Login Successful";
+        echo '<script type="text/javascript">openDelayCustomer()</script>';
+    }
+
+    if(empty($result_admin) && empty($result_customer)) {
+        echo "Incorrect Login";
     }
 }
-
-echo '<div class="debug">DEBUG:POST:';
-echo var_dump($result_admin);
-echo var_dump($result_customer);
-echo var_dump($_SESSION);
-echo '</div>';
