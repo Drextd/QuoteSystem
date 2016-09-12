@@ -7,7 +7,7 @@ have an error div to the right of the login form to display whether or not
 the input fields are empty or if the input can be validated.
 
 Upon logging in with either an Admin or Customer account there is a 2 second delay on loading 
-between the pages with a success message displayed in the top left hand corner if the login is successful.
+between the pages with a success message displayed in the middle of the screen if the login is successful.
 
 Depending on which account you use, The user will get a different set of navigation links. To ensure that 
 only the right user can access the right pages. Aswell as having a user security check so that

@@ -17,7 +17,7 @@ if(isset($_POST['home_login_submit'])) {
     if(!empty($result_admin)) {
         $_SESSION['userid'] = $result_admin;
         $_SESSION['username'] = $username;
-        echo "Admin Login Successful";
+        echo '<div class="loading_style">Admin Login Successful</div>';
         echo '<script type="text/javascript">openDelayAdmin()</script>';
     }
 
@@ -29,7 +29,7 @@ if(isset($_POST['home_login_submit'])) {
     if(!empty($result_customer)) {
         $_SESSION['userid'] = $result_customer;
         $_SESSION['username'] = $username;
-        echo "Customer Login Successful";
+        echo '<div class="loading_style">Customer Login Successful</div>';
         echo '<script type="text/javascript">openDelayCustomer()</script>';
     }
 

@@ -11,6 +11,17 @@ function openDelayCustomer(){
         window.location.href = "../View/customer_CP.php";}, 2000);
 }
 
+function logoutDelay(){
+    setTimeout(function (){
+        window.location.href = "../index.php";}, 2000);
+}
+
+function registerDelay(){
+    setTimeout(function (){
+        window.location.href = "../index.php";}, 2000);
+}
+
+
 function loginValidation(){
     
     error = 0;
@@ -82,14 +93,12 @@ function openAddService(){
 
 }
 
-
-
 function openRegistration(){
 
     document.getElementById('grey_background').style.display = "block";
     document.getElementById('popupbox').style.display = "block";
 
-    jQuery("#popupbox").load("view/registrationPage.php");
+    jQuery("#popupbox").load("View/registrationPage.php");
 
 }
 

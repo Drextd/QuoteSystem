@@ -132,7 +132,7 @@ a{
 
 .content_example2{
     width: 45%;
-    height: 15%;
+    height: 25%;
     border: solid 2px black;
     display: inline-block;
     margin: 35px;
@@ -241,5 +241,19 @@ a{
     color: red;
     font-weight: bold;
     font-size: 14px;
+}
+
+.loading_style{
+    width: 300px;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: solid 2px black;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 

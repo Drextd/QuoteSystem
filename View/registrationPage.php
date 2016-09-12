@@ -9,7 +9,7 @@
 
 
 <div class="form_container">
-    <form class="form_style" name="registerForm" method="post" action="">
+    <form class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php">
         <div>
             <label class="label_style">Username:</label><input class="input_style" type="text" name="customer_Username" placeholder="Username">
         </div>
@@ -29,7 +29,7 @@
             <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
         </div>
 
-        <button class="button_style" type="button" name="save_changes">Register!</button>
+        <button class="button_style" type="submit" name="register">Register!</button>
         <button class="button_style" type="button" name="reset_changes">Reset Form</button>
         <button class="popup_button_style" onclick="close_Popup()" type="button" name="closePopup">Close</button>
 
