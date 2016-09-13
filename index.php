@@ -65,6 +65,7 @@
 
 <div id="grey_background"></div>
 <div id="popupbox"></div>
+<div id="error_div_regi"></div>
 
 </body>
 </html>

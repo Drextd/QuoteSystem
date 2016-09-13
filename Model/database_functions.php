@@ -16,3 +16,30 @@ function registerCustomer($username, $password, $firstname, $lastname, $email, $
     return $result;
 }
 
+function searchCustomer(){
+
+    global $conn;
+    $sql = "";
+    $statement = $conn->prepare($sql);
+    $result = $statement->execute();
+    $statement->closeCursor();
+    return $result;
+
+}
+
+function updateCustomer($username, $password, $firstname, $lastname, $email, $phone){
+
+    global $conn;
+    $sql = "UPDATE customer SET customerUsername=:customerUsername, customerPass=:customerPass, customerFirstName=:customerFirstName, customerLastName=:customerLastName, customerEmail=:customerEmail, customerPhone=:customerPhone WHERE customerID=:categoryID";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':customer_Username', $username);
+    $statement->bindValue(':customer_Password', $password);
+    $statement->bindValue(':customer_First_Name', $firstname);
+    $statement->bindValue(':customer_Last_Name', $lastname);
+    $statement->bindValue(':customer_Email', $email);
+    $statement->bindValue(':customer_Phone', $phone);
+    $result = $statement->execute();
+    $statement->closeCursor();
+    return $result;
+}
+

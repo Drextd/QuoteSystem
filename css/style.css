@@ -228,9 +228,9 @@ a{
     display: none;
     background: #ffffff;
     position: absolute;
-    top: 30%;
+    top: 15%;
     right: 25%;
-    bottom: 20%;
+    bottom: 15%;
     left: 25%;
 }
 
@@ -242,6 +242,18 @@ a{
     font-weight: bold;
     font-size: 14px;
 }
+
+#error_div_regi{
+
+    position: absolute;
+    bottom: 17.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 
 .loading_style{
     width: 300px;

@@ -6,3 +6,14 @@ $pass = "";
 
 $conn = new PDO($uri, $user, $pass);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+try
+{
+    $conn = new PDO("mysql:host=localhost;dbname=QuoteSystem", $user, $pass);
+}
+catch(PDOException $e)
+{
+    $error_message = $e->getMessage();
+    echo $e;
+    exit();
+}

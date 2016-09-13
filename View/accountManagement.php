@@ -53,30 +53,30 @@ $adminUsername = $_SESSION['username'];
 
     <section>
         <div class="form_container">
-            <form class="form_style" name="accountManagementForm" method="post" action="">
+            <form class="form_style" name="accountManagementForm" method="post" action="./Controller/updateCustomerProcess.php">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search customer here"><button class="search_button_style" type="submit" name="searchSubmit">Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search customer here"><button class="search_button_style" type="button" name="searchSubmit" onclick="searchCustomer()" >Search</button>
                 </div>
                 <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
+                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customer_ID" name="customer_ID" placeholder="Customer ID">
                 </div>
                 <div>
-                    <label class="label_style">Username:</label><input class="input_style" type="text" name="customer_Username" placeholder="Username">
+                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customer_Username" name="customer_Username" placeholder="Username">
                 </div>
                 <div>
-                    <label class="label_style">Password:</label><input class="input_style" type="text" name="customer_Password" placeholder="Password">
+                    <label class="label_style">Password:</label><input class="input_style" type="text" id="customer_Password" name="customer_Password" placeholder="Password">
                 </div>
                 <div>
-                    <label class="label_style">First Name:</label><input class="input_style" type="text" name="customer_First_Name" placeholder="First Name">
+                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customer_First_Name" name="customer_First_Name" placeholder="First Name">
                 </div>
                 <div>
-                    <label class="label_style">Last Name:</label><input class="input_style" type="text" name="customer_Last_Name" placeholder="Last Name">
+                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customer_Last_Name" name="customer_Last_Name" placeholder="Last Name">
                 </div>
                 <div>
-                    <label class="label_style">Email:</label><input class="input_style" type="email" name="customer_Email" placeholder="Email">
+                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customer_Email" name="customer_Email" placeholder="Email">
                 </div>
                 <div>
-                    <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
+                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customer_Phone" name="customer_Phone" placeholder="Phone">
                 </div>
 
                 <button class="button_style" type="button" name="save_changes">Save Changes</button>

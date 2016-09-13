@@ -21,6 +21,10 @@ function registerDelay(){
         window.location.href = "../index.php";}, 2000);
 }
 
+function updateDelay(){
+    setTimeout(function (){
+        window.location.href = "./View/accountManagement.php";}, 2000);
+}
 
 function loginValidation(){
     
@@ -54,6 +58,87 @@ function loginValidation(){
         return false;
     }
 }
+
+function registerValidation(){
+
+    error = 0;
+    error_div_regi.innerHTML = '';
+
+    if(!customer_Username.checkValidity()) {
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a valid username<br/>';
+        error++;
+    }
+    if(customer_Username.value == ''){
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a username<br/>';
+        error++;
+    }
+    if(!customer_Password.checkValidity()) {
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a valid password<br/>';
+        error++;
+    }
+    if(customer_Password.value == ''){
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a password<br/>';
+        error++;
+    }
+    if(!customer_First_Name.checkValidity()) {
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a valid format (Letters only)<br/>';
+        error++;
+    }
+    if(customer_First_Name.value == ''){
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a first name<br/>';
+        error++;
+    }
+    if(!customer_Last_Name.checkValidity()) {
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a valid format (Letters only)<br/>';
+        error++;
+    }
+    if(customer_Last_Name.value == ''){
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a last name<br/>';
+        error++;
+    }
+    if(!customer_Email.checkValidity()) {
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a valid email (Example: email@email.com)<br/>';
+        error++;
+    }
+    if(customer_Email.value == ''){
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter an email<br/>';
+        error++;
+    }
+    if(!customer_Phone.checkValidity()) {
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a valid phone number (Example: 400000000)<br/>';
+        error++;
+    }
+    if(customer_Phone.value == ''){
+        error_div_regi.style.display = 'block';
+        error_div_regi.innerHTML += 'Please enter a phone number<br/>';
+        error++;
+    } 
+
+    if(error == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function searchCustomer(){
+
+    
+
+}
+
+
 
 
 
@@ -106,5 +191,6 @@ function close_Popup(){
     
     document.getElementById('grey_background').style.display = "none";
     document.getElementById('popupbox').style.display = "none";
-    
+    document.getElementById('error_div_regi').style.display = "none";
+
 }

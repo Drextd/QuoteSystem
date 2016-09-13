@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>accountManagement</title>
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <link href="./css/style.css" type="text/css" rel="stylesheet">
+    <script src="./js/script.js" type="text/javascript"></script>
+    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
 
 <div class="form_container">
-    <form class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php">
+    <form class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php" onsubmit="return registerValidation()">
         <div>
-            <label class="label_style">Username:</label><input class="input_style" type="text" name="customer_Username" placeholder="Username">
+            <label class="label_style">Username:</label><input class="input_style" type="text" id="customer_Username" name="customer_Username" placeholder="Username" pattern="^[A-Za-z0-9]+$">
         </div>
         <div>
-            <label class="label_style">Password:</label><input class="input_style" type="text" name="customer_Password" placeholder="Password">
+            <label class="label_style">Password:</label><input class="input_style" type="text" id="customer_Password" name="customer_Password" placeholder="Password" pattern="^[A-Za-z0-9]+$">
         </div>
         <div>
-            <label class="label_style">First Name:</label><input class="input_style" type="text" name="customer_First_Name" placeholder="First Name">
+            <label class="label_style">First Name:</label><input class="input_style" type="text" id="customer_First_Name" name="customer_First_Name" placeholder="First Name" pattern="^[A-Za-z0-9]+$">
         </div>
         <div>
-            <label class="label_style">Last Name:</label><input class="input_style" type="text" name="customer_Last_Name" placeholder="Last Name">
+            <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customer_Last_Name" name="customer_Last_Name" placeholder="Last Name" pattern="^[A-Za-z0-9]+$">
         </div>
         <div>
-            <label class="label_style">Email:</label><input class="input_style" type="email" name="customer_Email" placeholder="Email">
+            <label class="label_style">Email:</label><input class="input_style" type="email" id="customer_Email" name="customer_Email" placeholder="Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
         </div>
         <div>
-            <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
+            <label class="label_style">Phone:</label><input class="input_style" type="text" id="customer_Phone" name="customer_Phone" placeholder="Phone" pattern="^[0-9].{1,10}+$">
         </div>
 
         <button class="button_style" type="submit" name="register">Register!</button>
@@ -34,6 +36,8 @@
         <button class="popup_button_style" onclick="close_Popup()" type="button" name="closePopup">Close</button>
 
     </form>
+
+
 </div>
 </body>
 </html>

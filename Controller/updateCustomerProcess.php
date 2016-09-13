@@ -13,14 +13,14 @@ $lastname = $_POST['customer_Last_Name'];
 $email = $_POST['customer_Email'];
 $phone = $_POST['customer_Phone'];
 
-$result =  registerCustomer($username, $password, $firstname, $lastname, $email, $phone);
+$result =  updateCustomer($username, $password, $firstname, $lastname, $email, $phone);
 
 if($result){
+    
+    echo '<div class="loading_style">The update has been made successfully.</div>';
 
-    echo '<div class="loading_style">Your account has been created successfully.</br> You are now able to login.</div>';
-
-    echo '<script type="text/javascript">registerDelay()</script>';
-
+    echo '<script type="text/javascript">updateDelay()</script>';
+    
 }
 
 ?>
