@@ -132,11 +132,18 @@ function registerValidation(){
     }
 }
 
-function searchCustomer(){
-
-    
-
-}
+// function searchCustomer(){
+//
+//     jQuery.ajax({
+//         type: "",
+//         url: 'searchCustomer_function.php',
+//         dateType: 'json',
+//         data: {},
+//
+//     });
+//   
+//
+// }
 
 
 

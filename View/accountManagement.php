@@ -11,6 +11,8 @@ require ('../Controller/userSecurityCheck.php');
     <meta charset="UTF-8">
     <title>accountManagement</title>
     <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <script src="./js/script.js" type="text/javascript"></script>
+    <script src="./js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 
 <?php
@@ -53,9 +55,9 @@ $adminUsername = $_SESSION['username'];
 
     <section>
         <div class="form_container">
-            <form class="form_style" name="accountManagementForm" method="post" action="./Controller/updateCustomerProcess.php">
+            <form class="form_style" id="searchCustomerForm" name="accountManagementForm" method="post" action="./Model/searchCustomer_function.php">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search customer here"><button class="search_button_style" type="button" name="searchSubmit" onclick="searchCustomer()" >Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" name="searchCustomerInput" placeholder="Search customer here"><button class="search_button_style" type="submit" name="searchSubmit">Search</button>
                 </div>
                 <div>
                     <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customer_ID" name="customer_ID" placeholder="Customer ID">
