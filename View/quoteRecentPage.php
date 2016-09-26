@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>accountManagement</title>
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
-</head>
+<?php
+
+require ('../View/header.php');
+
+?>
+
 <body>
 
 <div class="content_example3">Displays most recent quote by jobDate in table form</div>

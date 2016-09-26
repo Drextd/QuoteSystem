@@ -16,15 +16,16 @@ function registerCustomer($username, $password, $firstname, $lastname, $email, $
     return $result;
 }
 
-function searchCustomer(){
+function searchCustomer($searchUsername){
 
     global $conn;
-    $sql = "";
+    $sql = "SELECT * FROM customer WHERE customerUsername = :customerUsername";
     $statement = $conn->prepare($sql);
-    $result = $statement->execute();
+    $statement->bindValue(':customerUsername', $searchUsername);
+    $statement->execute();
+    $result = $statement->fetchAll();
     $statement->closeCursor();
-    return $result;
-
+    return json_encode($result);
 }
 
 function updateCustomer($username, $password, $firstname, $lastname, $email, $phone){

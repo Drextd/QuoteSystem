@@ -2,20 +2,7 @@
 session_start();
 
 require ('../Controller/userSecurityCheck.php');
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>manageServices</title>
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
-    <script src="../js/script.js" type="text/javascript"></script>
-    <script src="../js/jquery-3.1.0.min.js" type="text/javascript"></script>
-</head>
-
-<?php
+require ('../View/header.php');
 
 $adminUsername = $_SESSION['username'];
 

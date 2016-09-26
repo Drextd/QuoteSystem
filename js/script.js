@@ -132,20 +132,24 @@ function registerValidation(){
     }
 }
 
-// function searchCustomer(){
-//
-//     jQuery.ajax({
-//         type: "",
-//         url: 'searchCustomer_function.php',
-//         dateType: 'json',
-//         data: {},
-//
-//     });
-//   
-//
-// }
 
-
+$(document).ready(function() {
+    $('#searchSubmit').click(function () {
+        $.ajax({
+            type: 'GET',
+            url: "../Controller/searchCustomerProcess.php",
+            data: $('#searchCustomerForm').serialize(),
+            dataType: 'json',
+            success: function(){
+                console.log(data);
+            },
+            error: function(xhr, textStatus, error){
+                if(textStatus === 'timeout' || xhr === 'timeout' || error === 'timeout')
+                    alert("request timeout");
+            }
+        });
+    });
+});
 
 
 
