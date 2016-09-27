@@ -42,9 +42,9 @@ $adminUsername = $_SESSION['username'];
 
     <section>
         <div class="form_container">
-            <form class="form_style" id="searchCustomerForm" method="post" action="#">
+            <form class="form_style" id="searchCustomerForm" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer here"><button class="search_button_style" type="button" id="searchSubmit" name="searchSubmit">Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer here"><button class="search_button_style" type="button" id="searchSubmit" name="searchSubmit" onclick="do_ajax()" >Search</button>
                 </div>
             </form>
             <form class="form_style" id="CustomerForm" method="post" action="#">
@@ -77,13 +77,13 @@ $adminUsername = $_SESSION['username'];
     </section>
 
     <footer>
-        
+        <div id="json"></div>
         <?php 
 
         include 'footer.php';
         
         ?>
-        <div id="json"></div>
+
     </footer>
 
 </div>

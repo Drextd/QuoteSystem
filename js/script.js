@@ -132,26 +132,23 @@ function registerValidation(){
     }
 }
 
-
-$(document).ready(function() {
-    $('#searchSubmit').click(function () {
-        $.ajax({
-            type: 'GET',
-            url: "../Controller/searchCustomerProcess.php",
-            data: $('#searchCustomerForm').serialize(),
-            dataType: 'json',
-            success: function(){
-                console.log(data);
-            },
-            error: function(xhr, textStatus, error){
-                if(textStatus === 'timeout' || xhr === 'timeout' || error === 'timeout')
-                    alert("request timeout");
+function do_ajax(){
+    $.ajax({
+        url: '../Controller/searchCustomerProcess.php',
+        method: 'POST',
+        data: $('#searchCustomerForm').serialize(),
+        dataType: 'json'
+    })
+        .done(function (searchCustomer) {
+            for (var i in searchCustomer){
+                $('input[name="'+i+'"]').val(searchCustomer[i]);
             }
+            // console.log(JSON.stringify(searchCustomer));
+        })
+        .fail(function(error){
+           console.log(error);
         });
-    });
-});
-
-
+}
 
 function openQuoteConfirm(){
 

@@ -25,7 +25,7 @@ function searchCustomer($searchUsername){
     $statement->execute();
     $result = $statement->fetchAll();
     $statement->closeCursor();
-    return json_encode($result);
+    return $result;
 }
 
 function updateCustomer($username, $password, $firstname, $lastname, $email, $phone){
