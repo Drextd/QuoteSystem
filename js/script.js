@@ -26,6 +26,11 @@ function updateDelay(){
         window.location.href = "./View/accountManagement.php";}, 2000);
 }
 
+function runLogout(){
+    window.location.href = "../Controller/logoutProcess.php";
+}
+
+
 function loginValidation(){
     
     error = 0;
@@ -132,7 +137,7 @@ function registerValidation(){
     }
 }
 
-function do_ajax(){
+function searchCustomerAjax(){
     $.ajax({
         url: '../Controller/searchCustomerProcess.php',
         method: 'POST',
@@ -143,7 +148,6 @@ function do_ajax(){
             for (var i in searchCustomer){
                 $('input[name="'+i+'"]').val(searchCustomer[i]);
             }
-            // console.log(JSON.stringify(searchCustomer));
         })
         .fail(function(error){
            console.log(error);

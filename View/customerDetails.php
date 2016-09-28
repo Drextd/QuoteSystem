@@ -10,35 +10,38 @@ $customerUsername = $_SESSION['username'];
 
 <body>
 
+<nav>
+
+    <div id="loginContainer">
+        <div>
+            <label class="loggedInStyle">Logged in as:</label>
+        </div>
+
+        <div>
+            <div class="loggedInStyle"><?php echo "$customerUsername" ?></div>
+        </div>
+
+        <div>
+            <button class="buttonStyle" onclick="runLogout()">Logout</button>
+        </div>
+    </div>
+
+    <ul>
+        <li><a class="hvr-fade" href="admin_CP.php">Home</a></li>
+        <li><a class="hvr-fade" href="#">Account Management</a></li>
+        <li><a class="hvr-fade" href="manageQuotes.php">Manage Quotes</a></li>
+        <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
+    </ul>
+
+</nav>
+
 <div id="container">
 
     <header>
-        <div id="home_header_image">
-            <div id="header_image">Header Image</div>
-        </div>
-
-        <div id="homeLogin">
-            <div>
-                <label class="home_login_label" >Logged in as:</label><div id="logged_in_style"><?php echo "$customerUsername" ?></div>
-            </div>
-
-            <div>
-                <div class="home_submit_style"></div>
-                <a id="logout_style" href="../Controller/logoutProcess.php">LogOut</a>
-                <div class="home_submit_style"></div>
-            </div>
-        </div>
-        <div class="clearAll"></div>
+        <div id="headerImage">Header Image</div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="customer_CP.php">Home</a></li>
-            <li><a href="startQuote.php">Start a Quote</a></li>
-            <li><a href="quoteHistory.php">Quote History</a></li>
-            <li><a href="#">Customer Details</a></li>
-        </ul>
-    </nav>
+
 
     <section>
         <div class="form_container">

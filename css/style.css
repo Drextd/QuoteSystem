@@ -6,21 +6,56 @@
 }
 
 #container{
-    margin: 0 auto;
-    width: 47.5%;
-    height: 1000px;
+    position: fixed;
+    left: 275px;
     background: lightblue;
+    width: 100%;
 }
 
 header{
     width: 100%;
     height: 15%;
-    background: lightskyblue;
+    background: #b3d4fc;
 }
 
 nav{
-    width: 100%;
-    height: 40px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 275px;
+    background: #0078ae;
+}
+
+nav ul{
+    list-style: none;
+    margin-top: 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+.hvr-fade {
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
+    background-color: #b3d4fc;
+    color: #0078ae;
 }
 
 section{
@@ -39,87 +74,50 @@ footer{
     clear: both;
 }
 
-#home_header_image{
-    width: 50%;
-    height: 100%;
-    background: lightgrey;
-    float: left;
-}
-
 #header_image{
     text-align: center;
-    line-height: 150px;
 }
 
-#homeLogin{
-    border: solid 2px black;
-    border-radius: 5px;
-    float: right;
-    margin: 30px 0px;
+#loginContainer{
+    width: 275px;
+    height: 110px;
+    background-color: #0078ae;
+    border-bottom: #ffffff solid 2px;
 }
 
-#home_login_style{
+#loginStyle{
     width: 100%;
     height: 100%;
 }
 
-#logged_in_style{
-    margin: 5px;
+.loginLabelStyle{
+    width: 85px;
+    margin: 8px;
     display: inline-block;
-    font-size: 16px
+    font-size: 16px;
+    color: #ffffff;
 }
 
-#logout_style{
-    margin: 5px;
+.loginInputStyle{
+    width: 125px;
+    margin: 5px 10px;
     display: inline-block;
     font-size: 16px;
 }
 
-.home_login_input{
-    width: 130px;
+.loggedInStyle{
+    width: 100px;
     margin: 5px 10px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 16px;
+    color: #ffffff;
 }
 
-.home_login_label{
-    width: 85px;
-    margin: 5px;
-    display: inline-block;
-    font-size: 12px;
-}
-
-#home_submit{
-    font-size: 14px;
-    margin: 5px auto;
-    display: inline-block;
-    width: 50px;
-}
-
-.home_submit_style{
-    background: black;
-    width: 83px;
-    height: 10px;
-    display: inline-block;
-    margin: 0 5px;
-}
-
-ul{
-    height: 40px;
-}
-
-li{
-    display: inline-block;
-    list-style-type: none;
-    text-align: center;
-    line-height: 40px;
-    background: lightcyan;
-}
-
-a{
-    font-size: 14px;
-    text-decoration: none;
-    margin: 5px;
+.buttonStyle{
+    margin: 5px 10px;
+    font-size: 16px;
+    width: 65px;
+    float: right;
 }
 
 .content_example1{
@@ -185,30 +183,8 @@ a{
     font-size: 14px;
 }
 
-.search_button_style{
-    width: 50px;
-    height: 20px;
-    display: inline-block;
-    font-size: 14px;
-}
-
 .input_style{
     width: 185px;
-}
-.button_style {
-    margin: 25px;
-    padding: 2px;
-}
-
-.search_button_style{
-    width: 50px;
-    height: 20px;
-    display: inline-block;
-    font-size: 12px;
-}
-
-.button_style {
-    margin: 25px;
 }
 
 #grey_background{

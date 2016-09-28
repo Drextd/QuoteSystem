@@ -10,35 +10,36 @@ $adminUsername = $_SESSION['username'];
 
 <body>
 
+<nav>
+
+    <div id="loginContainer">
+        <div>
+            <label class="loggedInStyle">Logged in as:</label>
+        </div>
+
+        <div>
+            <div class="loggedInStyle"><?php echo "$adminUsername" ?></div>
+        </div>
+
+        <div>
+            <button class="buttonStyle" onclick="runLogout()">Logout</button>
+        </div>
+    </div>
+
+    <ul>
+        <li><a class="hvr-fade" href="#">Home</a></li>
+        <li><a class="hvr-fade" href="accountManagement.php">Account Management</a></li>
+        <li><a class="hvr-fade" href="manageQuotes.php">Manage Quotes</a></li>
+        <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
+    </ul>
+
+</nav>
+
 <div id="container">
 
     <header>
-        <div id="home_header_image">
-            <div id="header_image">Header Image</div>
-        </div>
-
-        <div id="homeLogin">
-                <div>
-                    <label class="home_login_label" >Logged in as:</label><div id="logged_in_style"><?php echo "$adminUsername" ?></div>
-                </div>
-
-                <div>
-                    <div class="home_submit_style"></div>
-                        <a id="logout_style" href="../Controller/logoutProcess.php">LogOut</a>
-                    <div class="home_submit_style"></div>
-                </div>
-        </div>
-        <div class="clearAll"></div>
+        <div id="headerImage">Header Image</div>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="accountManagement.php">Account Management</a></li>
-            <li><a href="manageQuotes.php">Manage Quotes</a></li>
-            <li><a href="manageServices.php">Manage Services</a></li>
-        </ul>
-    </nav>
 
     <section>
         <div class="content_example3">List of quotes that need confirmation - printed from PHP in table form<button type="button" name="open_quote_confirm" onclick="openQuoteConfirm()">Click to confirm</button></div>
