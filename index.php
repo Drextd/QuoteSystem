@@ -21,17 +21,17 @@
                 <label class="loginLabelStyle" >Password:</label><input class="loginInputStyle" type="password" id="home_password" name="home_password" placeholder="Password" pattern="^[A-Za-z]+$">
             </div>
             <div>
-                    <button class="buttonStyle" type="submit" name="home_login_submit">Login</button>
+                <button class="buttonStyle" type="submit" name="home_login_submit">Login</button>
             </div>
         </form>
     </div>
     
     <ul>
-        <li><a class="hvr-fade" href="#">Home</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Home</a></li>
         <li><a class="hvr-fade" href="View/services.php">Services</a></li>
         <li><a class="hvr-fade" href="View/contactUS.php">Contact Us</a></li>
     </ul>
-    
+
 </nav>
 
 

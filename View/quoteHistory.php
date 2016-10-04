@@ -4,7 +4,7 @@ session_start();
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
 
-$customerUsername = $_SESSION['username'];
+$customerUsernameLoggedIn = $_SESSION['username'];
 
 ?>
 
@@ -18,7 +18,7 @@ $customerUsername = $_SESSION['username'];
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$customerUsername" ?></div>
+            <div class="loggedInStyle"><?php echo "$customerUsernameLoggedIn" ?></div>
         </div>
 
         <div>
@@ -27,10 +27,10 @@ $customerUsername = $_SESSION['username'];
     </div>
 
     <ul>
-        <li><a class="hvr-fade" href="admin_CP.php">Home</a></li>
-        <li><a class="hvr-fade" href="#">Account Management</a></li>
-        <li><a class="hvr-fade" href="manageQuotes.php">Manage Quotes</a></li>
-        <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
+        <li><a class="hvr-fade" href="customer_CP.php">Customer Home</a></li>
+        <li><a class="hvr-fade" href="startQuote.php">Start a Quote</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Quote History</a></li>
+        <li><a class="hvr-fade" href="customerDetails.php">Customer Details</a></li>
     </ul>
 
 </nav>

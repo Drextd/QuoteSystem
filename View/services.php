@@ -24,8 +24,8 @@ require ('../View/header.php');
 
     <ul>
         <li><a class="hvr-fade" href="../index.php">Home</a></li>
-        <li><a class="hvr-fade" href="#">Services</a></li>
-        <li><a class="hvr-fade" href="../View/contactUS.php">Contact Us</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Services</a></li>
+        <li><a class="hvr-fade" href="contactUS.php">Contact Us</a></li>
     </ul>
 
 </nav>

@@ -53,9 +53,13 @@ nav ul li a{
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
 }
-.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active {
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active{
     background-color: #b3d4fc;
     color: #0078ae;
+}
+
+.activeTab{
+    background: #6eac2c
 }
 
 section{
@@ -167,11 +171,6 @@ footer{
 .label_style{
     width: 80px;
     margin: 5px;
-}
-
-.label_style{
-    width: 80px;
-    margin: 5px;
     display: inline-block;
     font-size: 14px;
 }
@@ -181,10 +180,6 @@ footer{
     margin: 5px 20px;
     display: inline-block;
     font-size: 14px;
-}
-
-.input_style{
-    width: 185px;
 }
 
 #grey_background{

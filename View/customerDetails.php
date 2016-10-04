@@ -2,13 +2,18 @@
 session_start();
 
 require ('../Controller/userSecurityCheck.php');
+require ('../Model/database_functions.php');
+require ('../Model/dbConnect.php');
 require ('../View/header.php');
 
-$customerUsername = $_SESSION['username'];
+$customerUsernameLoggedIn = $_SESSION['username'];
+
+/* Get customer details */
+$result = getCustomerDetails();
 
 ?>
 
-<body>
+<body xmlns="http://www.w3.org/1999/html">
 
 <nav>
 
@@ -18,7 +23,7 @@ $customerUsername = $_SESSION['username'];
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$customerUsername" ?></div>
+            <div class="loggedInStyle"><?php echo "$customerUsernameLoggedIn" ?></div>
         </div>
 
         <div>
@@ -27,10 +32,10 @@ $customerUsername = $_SESSION['username'];
     </div>
 
     <ul>
-        <li><a class="hvr-fade" href="admin_CP.php">Home</a></li>
-        <li><a class="hvr-fade" href="#">Account Management</a></li>
-        <li><a class="hvr-fade" href="manageQuotes.php">Manage Quotes</a></li>
-        <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
+        <li><a class="hvr-fade" href="customer_CP.php">Customer Home</a></li>
+        <li><a class="hvr-fade" href="startQuote.php">Start a Quote</a></li>
+        <li><a class="hvr-fade" href="quoteHistory.php">Quote History</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Customer Details</a></li>
     </ul>
 
 </nav>
@@ -44,34 +49,34 @@ $customerUsername = $_SESSION['username'];
 
 
     <section>
+        <?php foreach($result as $row): ?>
         <div class="form_container">
-            <form class="form_style" name="accountManagementForm" method="post" action="">
+            <form class="form_style" name="customerDetailsForm"  action="#" >
+                <div>
+                    <label class="label_style">Customer ID:</label><input class="input_style" type="hidden" id="customerID" name="customerID">
+                </div>
+                <div>
+                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customerUsername" value="<?php echo $row['customerUsername'] ?>">
+                </div>
+                <div>
+                    <label class="label_style">Password:</label><input class="input_style" type="password" id="customerPassword" name="customerPassword" value="<?php echo $row['customerPassword'] ?>">
+                </div>
+                <div>
+                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customerFirstName" value="<?php echo $row['customerFirstName'] ?>">
+                </div>
+                <div>
+                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customerLastName" value="<?php echo $row['customerLastName'] ?>">
+                </div>
+                <div>
+                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customerEmail" value="<?php echo $row['customerEmail'] ?>">
+                </div>
+                <div>
+                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" value="<?php echo $row['customerPhone'] ?>">
+                </div>
 
-                <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
-                </div>
-                <div>
-                    <label class="label_style">Username:</label><input class="input_style" type="text" name="customer_Username" placeholder="Username">
-                </div>
-                <div>
-                    <label class="label_style">Password:</label><input class="input_style" type="text" name="customer_Password" placeholder="Password">
-                </div>
-                <div>
-                    <label class="label_style">First Name:</label><input class="input_style" type="text" name="customer_First_Name" placeholder="First Name">
-                </div>
-                <div>
-                    <label class="label_style">Last Name:</label><input class="input_style" type="text" name="customer_Last_Name" placeholder="Last Name">
-                </div>
-                <div>
-                    <label class="label_style">Email:</label><input class="input_style" type="email" name="customer_Email" placeholder="Email">
-                </div>
-                <div>
-                    <label class="label_style">Phone:</label><input class="input_style" type="text" name="customer_Phone" placeholder="Phone">
-                </div>
+                <div class="content_example2">Please contact us if you would require to make changes to your details.</br>Show contact Us details</div>
 
-                <div class="content_example2">Please contact us if you would require to make changes to your details<a href="contactUS.php">Click here</a></div>
-
-            </form>
+            </form <?php endforeach; ?>>
         </div>
 
     </section>

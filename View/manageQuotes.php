@@ -4,7 +4,7 @@ session_start();
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
 
-$adminUsername = $_SESSION['username'];
+$adminUsernameLogginIn = $_SESSION['username'];
 
 ?>
 
@@ -18,7 +18,7 @@ $adminUsername = $_SESSION['username'];
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$adminUsername" ?></div>
+            <div class="loggedInStyle"><?php echo "$adminUsernameLogginIn" ?></div>
         </div>
 
         <div>
@@ -27,9 +27,9 @@ $adminUsername = $_SESSION['username'];
     </div>
 
     <ul>
-        <li><a class="hvr-fade" href="admin_CP.php">Home</a></li>
+        <li><a class="hvr-fade" href="admin_CP.php">Admin Home</a></li>
         <li><a class="hvr-fade" href="accountManagement.php">Account Management</a></li>
-        <li><a class="hvr-fade" href="#">Manage Quotes</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Manage Quotes</a></li>
         <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
     </ul>
 
@@ -57,7 +57,7 @@ $adminUsername = $_SESSION['username'];
                 </div>
 
                 <button class="button_style" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
-                <button class="button_style" type="button" name="reset_quote_search">Reset Search</button>
+                <button class="button_style" type="reset" name="reset_quote_search">Reset Form</button>
 
             </form>
         </div>

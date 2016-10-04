@@ -32,7 +32,7 @@ require ('../View/header.php');
             <button class="popup_button_style" type="button" name="confirmQuoteToCustomer">Confirm Changes</button>
         </div>
         <div>
-            <button class="popup_button_style" type="button" name="reset_changes">Reset Changes</button>
+            <button class="popup_button_style" type="reset" name="reset_changes">Reset Form</button>
         </div>
         <div>
             <button class="popup_button_style" onclick="close_Popup()" type="button" name="closePopup">Close</button>

@@ -26,6 +26,11 @@ function updateDelay(){
         window.location.href = "./View/accountManagement.php";}, 2000);
 }
 
+function serviceLoad(){
+    setTimeout(function (){
+        window.location.href = "../View/manageServices.php";}, 2000);
+}
+
 function runLogout(){
     window.location.href = "../Controller/logoutProcess.php";
 }
@@ -137,22 +142,52 @@ function registerValidation(){
     }
 }
 
+
+// --- Ajax functions --- //
+
+
 function searchCustomerAjax(){
     $.ajax({
         url: '../Controller/searchCustomerProcess.php',
         method: 'POST',
         data: $('#searchCustomerForm').serialize(),
-        dataType: 'json'
-    })
-        .done(function (searchCustomer) {
-            for (var i in searchCustomer){
-                $('input[name="'+i+'"]').val(searchCustomer[i]);
-            }
-        })
-        .fail(function(error){
-           console.log(error);
-        });
+        dataType: 'json',
+        success: searchCustomer
+    });
 }
+
+function searchCustomer(searchData){
+
+        for (var key in searchData){
+            var outdata = '';
+            for (var subkey in searchData[key]){
+                document.getElementById(subkey).value = searchData[key][subkey];
+                outdata += subkey + ' ' + searchData[key][subkey] + ' ';
+            }
+        }
+}
+
+function searchServiceAjax(){
+    $.ajax({
+        url: '../Controller/searchServiceProcess.php',
+        method: 'POST',
+        data: $('#searchServiceForm').serialize(),
+        dataType: 'json',
+        success: searchService
+    });
+}
+
+function searchService(searchData){
+
+    for (var key in searchData){
+        var outdata = '';
+        for (var subkey in searchData[key]){
+            document.getElementById(subkey).value = searchData[key][subkey];
+            outdata += subkey + ' ' + searchData[key][subkey] + ' ';
+        }
+    }
+}
+
 
 function openQuoteConfirm(){
 

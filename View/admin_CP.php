@@ -4,7 +4,7 @@ session_start();
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
 
-$adminUsername = $_SESSION['username'];
+$adminUsernameLoggedIn = $_SESSION['username'];
 
 ?>
 
@@ -18,7 +18,7 @@ $adminUsername = $_SESSION['username'];
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$adminUsername" ?></div>
+            <div class="loggedInStyle"><?php echo "$adminUsernameLoggedIn" ?></div>
         </div>
 
         <div>
@@ -27,7 +27,7 @@ $adminUsername = $_SESSION['username'];
     </div>
 
     <ul>
-        <li><a class="hvr-fade" href="#">Home</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Admin Home</a></li>
         <li><a class="hvr-fade" href="accountManagement.php">Account Management</a></li>
         <li><a class="hvr-fade" href="manageQuotes.php">Manage Quotes</a></li>
         <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>

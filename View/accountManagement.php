@@ -4,7 +4,7 @@ session_start();
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
 
-$adminUsername = $_SESSION['username'];
+$adminUsernameLoggedIn = $_SESSION['username'];
 
 ?>
 
@@ -18,7 +18,7 @@ $adminUsername = $_SESSION['username'];
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$adminUsername" ?></div>
+            <div class="loggedInStyle"><?php echo "$adminUsernameLoggedIn" ?></div>
         </div>
 
         <div>
@@ -27,8 +27,8 @@ $adminUsername = $_SESSION['username'];
     </div>
 
     <ul>
-        <li><a class="hvr-fade" href="admin_CP.php">Home</a></li>
-        <li><a class="hvr-fade" href="#">Account Management</a></li>
+        <li><a class="hvr-fade" href="admin_CP.php">Admin Home</a></li>
+        <li><a class="hvr-fade, activeTab" href="#">Account Management</a></li>
         <li><a class="hvr-fade" href="manageQuotes.php">Manage Quotes</a></li>
         <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
     </ul>
@@ -50,29 +50,29 @@ $adminUsername = $_SESSION['username'];
             </form>
             <form class="form_style" id="CustomerForm" method="post" action="#">
                 <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customer_ID" placeholder="Customer ID">
+                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customerID" placeholder="Customer ID">
                 </div>
                 <div>
-                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customer_Username" placeholder="Username">
+                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customerUsername" placeholder="Username">
                 </div>
                 <div>
-                    <label class="label_style">Password:</label><input class="input_style" type="text" id="customerPassword" name="customer_Password" placeholder="Password">
+                    <label class="label_style">Password:</label><input class="input_style" type="text" id="customerPass" name="customerPass" placeholder="Password">
                 </div>
                 <div>
-                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customer_First_Name" placeholder="First Name">
+                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customerFirstName" placeholder="First Name">
                 </div>
                 <div>
-                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customer_Last_Name" placeholder="Last Name">
+                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customerLastName" placeholder="Last Name">
                 </div>
                 <div>
-                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customer_Email" placeholder="Email">
+                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customerEmail" placeholder="Email">
                 </div>
                 <div>
-                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customer_Phone" placeholder="Phone">
+                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" placeholder="Phone">
                 </div>
 
                 <button class="button_style" type="button" name="save_changes">Save Changes</button>
-                <button class="button_style" type="button" name="reset_changes">Reset Changes</button>
+                <button class="button_style" type="reset" name="reset_changes">Reset Form</button>
             </form>
         </div>
     </section>

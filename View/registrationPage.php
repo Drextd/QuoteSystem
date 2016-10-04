@@ -29,7 +29,7 @@ require ('../View/header.php');
         </div>
 
         <button class="button_style" type="submit" name="register">Register!</button>
-        <button class="button_style" type="button" name="reset_changes">Reset Form</button>
+        <button class="button_style" type="reset" name="reset_changes">Reset Form</button>
         <button class="popup_button_style" onclick="close_Popup()" type="button" name="closePopup">Close</button>
 
     </form>

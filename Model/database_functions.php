@@ -2,7 +2,6 @@
 
 /* Customer functions */
 
-
 function registerCustomer($username, $password, $firstname, $lastname, $email, $phone){
 
     global $conn;
@@ -42,7 +41,45 @@ function searchCustomer($searchUsername){
     $statement = $conn->prepare($sql);
     $statement->bindValue(':customerUsername', $searchUsername);
     $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $result;
+}
+
+function getCustomerDetails(){
+
+    global $conn;
+    $sql = "SELECT * FROM customer WHERE customerUsername = ' . $_SESSION["username"] . '";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
     $result = $statement->fetchAll();
+    return $result;
+}
+
+/* Admin functions */
+
+function addService($jobCategory, $jobType, $jobTime, $jobPrice){
+
+    global $conn;
+    $sql = "INSERT INTO services (jobCategory, jobType, jobTime, jobPrice) VALUES (:jobCategory, :jobType, :jobTime, :jobPrice)";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':jobCategory', $jobCategory);
+    $statement->bindValue(':jobType', $jobType);
+    $statement->bindValue(':jobTime', $jobTime);
+    $statement->bindValue(':jobPrice', $jobPrice);
+    $result = $statement->execute();
+    $statement->closeCursor();
+    return $result;
+}
+
+function searchService($searchService){
+
+    global $conn;
+    $sql = "SELECT * FROM services WHERE serviceID = :serviceID";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':serviceID', $searchService);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     $statement->closeCursor();
     return $result;
 }
