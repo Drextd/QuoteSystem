@@ -2,6 +2,8 @@
 session_start();
 
 require ('../Controller/userSecurityCheck.php');
+require ('../Model/dbConnect.php');
+require ('../Model/database_functions.php');
 require ('../View/header.php');
 
 $customerUsernameLoggedIn = $_SESSION['username'];
@@ -48,13 +50,23 @@ $customerUsernameLoggedIn = $_SESSION['username'];
         <div class="form_container">
             <form class="form_style" name="manageServiceForm" method="post" action="">
                 <div>
-                    <label class="label_style">Job Category:</label><select class="input_style" name="jobCategory"><option>Dropdown to show categories</option></select>
+                    <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory"><option>Please select a Category</option>
+                        <?php
+
+                        $jobCatDropDown = getJobCategoryDropDown();
+
+                        foreach($jobCatDropDown as $row):
+                                echo "<option id='selectedJobCategory' value=" . $row['serviceID'] . ">" . $row['jobCategory'] . "</option>";
+                        endforeach;
+
+                        ?>
+                    </select>
                 </div>
                 <div>
-                    <label class="label_style">Job Type:</label><select class="input_style"  name="jobType"><option>Dropdown to show job types</option></select>
+                    <label class="label_style">Job Type:</label><select class="input_style"  name="jobType"><option>Please select a Job Type</option></select>
                 </div>
                 <div>
-                    <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time">
+                    <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time" >
                 </div>
                 <div>
                     <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">

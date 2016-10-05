@@ -45,7 +45,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
 
     <section>
         <div class="content_example3">display contact us info</div>
-        <div class="content_example3">display most recent quote, Quote ID, Job Category</div><button type="button" name="open_quote_recent" onclick="openQuoteRecent()">Click to confirm</button>
+        <div class="content_example3">display most recent quote, Quote ID, Job Category</div><button type="button" name="open_quote_recent" onclick="openQuoteRecent()">Show Most Recent Quote</button>
     </section>
 
     <footer>

@@ -9,7 +9,7 @@ require ('../View/header.php');
 $customerUsernameLoggedIn = $_SESSION['username'];
 
 /* Get customer details */
-$result = getCustomerDetails();
+$result = getCustomerDetails($customerUsernameLoggedIn);
 
 ?>
 
@@ -53,32 +53,32 @@ $result = getCustomerDetails();
         <div class="form_container">
             <form class="form_style" name="customerDetailsForm"  action="#" >
                 <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="hidden" id="customerID" name="customerID">
+                    <input class="input_style" type="hidden" id="customerID" name="customerID">
                 </div>
                 <div>
-                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customerUsername" value="<?php echo $row['customerUsername'] ?>">
+                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customerUsername" readonly value="<?php echo $row['customerUsername'] ?>">
                 </div>
                 <div>
-                    <label class="label_style">Password:</label><input class="input_style" type="password" id="customerPassword" name="customerPassword" value="<?php echo $row['customerPassword'] ?>">
+                    <label class="label_style">Password:</label><input class="input_style" type="password" id="customerPassword" name="customerPassword" readonly value="<?php echo $row['customerPassword'] ?>">
                 </div>
                 <div>
-                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customerFirstName" value="<?php echo $row['customerFirstName'] ?>">
+                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customerFirstName" readonly value="<?php echo $row['customerFirstName'] ?>">
                 </div>
                 <div>
-                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customerLastName" value="<?php echo $row['customerLastName'] ?>">
+                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customerLastName" readonly value="<?php echo $row['customerLastName'] ?>">
                 </div>
                 <div>
-                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customerEmail" value="<?php echo $row['customerEmail'] ?>">
+                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customerEmail" readonly value="<?php echo $row['customerEmail'] ?>">
                 </div>
                 <div>
-                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" value="<?php echo $row['customerPhone'] ?>">
+                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" readonly value="<?php echo $row['customerPhone'] ?>">
                 </div>
 
                 <div class="content_example2">Please contact us if you would require to make changes to your details.</br>Show contact Us details</div>
 
-            </form <?php endforeach; ?>>
+            </form>
         </div>
-
+        <?php endforeach; ?>
     </section>
 
     <footer>

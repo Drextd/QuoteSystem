@@ -10,11 +10,11 @@ require ('../View/header.php');
     <div id="loginContainer">
         <form id="loginStyle" name="homeLoginForm" method="post" action="../Controller/processUser.php" onSubmit="return loginValidation();" novalidate>
             <div>
-                <label class="loginLabelStyle" >Username:</label><input class="loginInputStyle" type="text" id="home_username" name="home_username" placeholder="Username" pattern="^[A-Za-z]+$">
+                <label class="loginLabelStyle" >Username:</label><input class="loginInputStyle" type="text" id="home_username" name="home_username" placeholder="Username" pattern="^[A-Za-z0-9]+$">
             </div>
 
             <div>
-                <label class="loginLabelStyle" >Password:</label><input class="loginInputStyle" type="password" id="home_password" name="home_password" placeholder="Password" pattern="^[A-Za-z]+$">
+                <label class="loginLabelStyle" >Password:</label><input class="loginInputStyle" type="password" id="home_password" name="home_password" placeholder="Password" pattern="^[A-Za-z0-9]+$">
             </div>
             <div>
                 <button class="buttonStyle" type="submit" name="home_login_submit">Login</button>

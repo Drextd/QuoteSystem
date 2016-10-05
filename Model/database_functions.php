@@ -46,13 +46,15 @@ function searchCustomer($searchUsername){
     return $result;
 }
 
-function getCustomerDetails(){
+function getCustomerDetails($customerUsernameLoggedIn){
 
     global $conn;
-    $sql = "SELECT * FROM customer WHERE customerUsername = ' . $_SESSION["username"] . '";
+    $sql = "SELECT * FROM customer WHERE customerUsername = :customerUsername";
     $statement = $conn->prepare($sql);
+    $statement->bindValue(':customerUsername', $customerUsernameLoggedIn);
     $statement->execute();
-    $result = $statement->fetchAll();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
     return $result;
 }
 
@@ -104,8 +106,34 @@ function customerCheck($username, $password){
     $check_customerUser->execute();
     $result_customer = $check_customerUser->fetchColumn();
     return$result_customer;
-
 }
+
+/* Quote functions */
+
+function getJobCategoryDropDown(){
+
+    global $conn;
+    $sql = 'SELECT DISTINCT jobCategory FROM services ORDER BY jobCategory';
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $jobCatDropDown = $statement->fetchAll();
+    $statement->closeCursor();
+    return $jobCatDropDown;
+}
+
+function getJobTypeDropDown(){
+
+    global $conn;
+    $sql = 'SELECT * FROM services ORDER BY jobType';
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $jobTypeDropDown = $statement->fetchAll();
+    $statement->closeCursor();
+    return $jobTypeDropDown;
+}
+
+
+
 
 
   

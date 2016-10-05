@@ -142,7 +142,6 @@ function registerValidation(){
     }
 }
 
-
 // --- Ajax functions --- //
 
 
@@ -187,6 +186,30 @@ function searchService(searchData){
         }
     }
 }
+
+$(document).ready(function () {
+    $('#jobCategory').change(function () {
+        $.ajax({
+            url: '../Controller/jobTypeSelectProcess.php',
+            dataType: 'json',
+            success: jobTypeSelect()
+        });
+    });
+});
+
+function jobTypeSelect(jobTypeSelect){
+
+    
+    
+}
+
+
+
+
+
+// var val = $(this).val();
+// if (val == )
+
 
 
 function openQuoteConfirm(){
