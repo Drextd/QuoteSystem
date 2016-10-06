@@ -50,7 +50,9 @@ $customerUsernameLoggedIn = $_SESSION['username'];
         <div class="form_container">
             <form class="form_style" name="manageServiceForm" method="post" action="">
                 <div>
-                    <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory"><option>Please select a Category</option>
+                    
+                    <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory">
+                        <option>Please select a Category</option>
                         <?php
 
                         $jobCatDropDown = getJobCategoryDropDown();
@@ -63,7 +65,9 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                     </select>
                 </div>
                 <div>
-                    <label class="label_style">Job Type:</label><select class="input_style"  name="jobType"><option>Please select a Job Type</option></select>
+                    <label class="label_style">Job Type:</label><select class="input_style" id="jobType" name="jobType">
+                        <option>Please select a Job Type</option>
+                    </select>
                 </div>
                 <div>
                     <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time" >
@@ -80,7 +84,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
     </section>
 
     <footer>
-
+            
         <?php
 
         include 'footer.php';

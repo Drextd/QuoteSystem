@@ -189,26 +189,23 @@ function searchService(searchData){
 
 $(document).ready(function () {
     $('#jobCategory').change(function () {
+
+        var $jobCatDropDown = $(this);
+
         $.ajax({
             url: '../Controller/jobTypeSelectProcess.php',
             dataType: 'json',
-            success: jobTypeSelect()
+            success: function () {
+
+                    console.log($jobCatDropDown);
+
+            }
         });
     });
 });
 
-function jobTypeSelect(jobTypeSelect){
-
-    
-    
-}
 
 
-
-
-
-// var val = $(this).val();
-// if (val == )
 
 
 

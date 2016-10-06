@@ -124,10 +124,10 @@ function getJobCategoryDropDown(){
 function getJobTypeDropDown(){
 
     global $conn;
-    $sql = 'SELECT * FROM services ORDER BY jobType';
+    $sql = 'SELECT * FROM services';
     $statement = $conn->prepare($sql);
     $statement->execute();
-    $jobTypeDropDown = $statement->fetchAll();
+    $jobTypeDropDown = $statement->fetchAll(PDO::FETCH_ASSOC);
     $statement->closeCursor();
     return $jobTypeDropDown;
 }
