@@ -50,7 +50,6 @@ $customerUsernameLoggedIn = $_SESSION['username'];
         <div class="form_container">
             <form class="form_style" name="manageServiceForm" method="post" action="">
                 <div>
-                    
                     <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory">
                         <option>Please select a Category</option>
                         <?php
@@ -58,22 +57,23 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                         $jobCatDropDown = getJobCategoryDropDown();
 
                         foreach($jobCatDropDown as $row):
-                                echo "<option id='selectedJobCategory' value=" . $row['serviceID'] . ">" . $row['jobCategory'] . "</option>";
+                            echo "<option value=" . $row['categoryID'] . ">" . $row['jobCategory'] . "</option>";
                         endforeach;
 
                         ?>
                     </select>
                 </div>
                 <div>
-                    <label class="label_style">Job Type:</label><select class="input_style" id="jobType" name="jobType">
-                        <option>Please select a Job Type</option>
+                    <label class="label_style">Service Type:</label><select class="input_style" name="serviceType">
+                        <option>Please select a Service Type</option>
+                        <option id="serviceType"></option>
                     </select>
                 </div>
                 <div>
-                    <label class="label_style">Job Time:</label><input class="input_style" type="text" name="jobTime" placeholder="Job Time" >
+                    <label class="label_style">Service Time:</label><input class="input_style" type="text" name="serviceTime" placeholder="service Time" >
                 </div>
                 <div>
-                    <label class="label_style">Job Price:</label><input class="input_style" type="text" name="jobPrice" placeholder="Job Price">
+                    <label class="label_style">Service Price:</label><input class="input_style" type="text" name="servicePrice" placeholder="service Price">
                 </div>
 
                 <button class="button_style" type="button" name="add__services">Request Quote</button>

@@ -172,41 +172,45 @@ function searchServiceAjax(){
         method: 'POST',
         data: $('#searchServiceForm').serialize(),
         dataType: 'json',
-        success: searchService
-    });
-}
+        success: function searchService(searchData){
 
-function searchService(searchData){
-
-    for (var key in searchData){
-        var outdata = '';
-        for (var subkey in searchData[key]){
-            document.getElementById(subkey).value = searchData[key][subkey];
-            outdata += subkey + ' ' + searchData[key][subkey] + ' ';
+            for (var key in searchData){
+                var outdata = '';
+                for (var subkey in searchData[key]){
+                    document.getElementById(subkey).value = searchData[key][subkey];
+                    outdata += subkey + ' ' + searchData[key][subkey] + ' ';
+                }
+            }
         }
-    }
+    });
 }
 
 $(document).ready(function () {
     $('#jobCategory').change(function () {
 
-        var $jobCatDropDown = $(this);
-
+        var jobCatDropDown = document.getElementById('jobCategory').value;
+        
         $.ajax({
-            url: '../Controller/jobTypeSelectProcess.php',
+            url: '../Controller/serviceTypeSelectProcess.php',
             dataType: 'json',
-            success: function () {
+            success: function serviceTypeDropDown(sTDropDown) {
 
-                    console.log($jobCatDropDown);
-
+                for (var i = 0; i < sTDropDown.length; i++) {
+                    if (sTDropDown[i].categoryID == jobCatDropDown) {
+                        for (var key in sTDropDown){
+                            var outdata = '';
+                            for (var subkey in sTDropDown[key]){
+                                document.getElementById('serviceType').innerHTML = sTDropDown[key][subkey];
+                                outdata += subkey + ' ' + sTDropDown[key][subkey] + ' ';
+                            }
+                        }
+                            console.log(sTDropDown[i]);
+                    }
+                }
             }
+            });
         });
     });
-});
-
-
-
-
 
 
 function openQuoteConfirm(){
@@ -258,6 +262,5 @@ function close_Popup(){
     
     document.getElementById('grey_background').style.display = "none";
     document.getElementById('popupbox').style.display = "none";
-    document.getElementById('error_div_regi').style.display = "none";
 
 }

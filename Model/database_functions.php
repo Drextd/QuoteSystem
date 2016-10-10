@@ -60,15 +60,15 @@ function getCustomerDetails($customerUsernameLoggedIn){
 
 /* Admin functions */
 
-function addService($jobCategory, $jobType, $jobTime, $jobPrice){
+function addService($categoryID, $serviceType, $serviceTime, $servicePrice){
 
     global $conn;
-    $sql = "INSERT INTO services (jobCategory, jobType, jobTime, jobPrice) VALUES (:jobCategory, :jobType, :jobTime, :jobPrice)";
+    $sql = "INSERT INTO services (categoryID, serviceType, serviceTime, servicePrice) VALUES (:categoryID, :serviceType, :serviceTime, :servicePrice)";
     $statement = $conn->prepare($sql);
-    $statement->bindValue(':jobCategory', $jobCategory);
-    $statement->bindValue(':jobType', $jobType);
-    $statement->bindValue(':jobTime', $jobTime);
-    $statement->bindValue(':jobPrice', $jobPrice);
+    $statement->bindValue(':categoryID', $categoryID);
+    $statement->bindValue(':serviceType', $serviceType);
+    $statement->bindValue(':serviceTime', $serviceTime);
+    $statement->bindValue(':servicePrice', $servicePrice);
     $result = $statement->execute();
     $statement->closeCursor();
     return $result;
@@ -77,7 +77,7 @@ function addService($jobCategory, $jobType, $jobTime, $jobPrice){
 function searchService($searchService){
 
     global $conn;
-    $sql = "SELECT * FROM services WHERE serviceID = :serviceID";
+    $sql = "SELECT serviceID, jobCategory, serviceType, serviceTime, servicePrice FROM services as A JOIN service_category as B ON A.categoryID=B.categoryID WHERE serviceID = :serviceID";
     $statement = $conn->prepare($sql);
     $statement->bindValue(':serviceID', $searchService);
     $statement->execute();
@@ -113,7 +113,7 @@ function customerCheck($username, $password){
 function getJobCategoryDropDown(){
 
     global $conn;
-    $sql = 'SELECT DISTINCT jobCategory FROM services ORDER BY jobCategory';
+    $sql = 'SELECT * FROM service_category ORDER BY jobCategory';
     $statement = $conn->prepare($sql);
     $statement->execute();
     $jobCatDropDown = $statement->fetchAll();
@@ -121,15 +121,15 @@ function getJobCategoryDropDown(){
     return $jobCatDropDown;
 }
 
-function getJobTypeDropDown(){
+function getServiceTypeDropDown(){
 
     global $conn;
-    $sql = 'SELECT * FROM services';
+    $sql = 'SELECT categoryID, serviceType FROM services';
     $statement = $conn->prepare($sql);
     $statement->execute();
-    $jobTypeDropDown = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $serviceTypeDropDown = $statement->fetchAll(PDO::FETCH_ASSOC);
     $statement->closeCursor();
-    return $jobTypeDropDown;
+    return $serviceTypeDropDown;
 }
 
 
