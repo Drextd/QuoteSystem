@@ -132,6 +132,16 @@ function getServiceTypeDropDown(){
     return $serviceTypeDropDown;
 }
 
+function populateQuote(){
+
+    global $conn;
+    $sql = 'SELECT serviceType, serviceTime, servicePrice FROM services';
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $populateQuote = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $populateQuote;
+}
 
 
 

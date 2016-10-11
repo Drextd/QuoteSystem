@@ -144,26 +144,23 @@ function registerValidation(){
 
 // --- Ajax functions --- //
 
-
 function searchCustomerAjax(){
     $.ajax({
         url: '../Controller/searchCustomerProcess.php',
         method: 'POST',
         data: $('#searchCustomerForm').serialize(),
         dataType: 'json',
-        success: searchCustomer
-    });
-}
+        success: function searchCustomer(searchData){
 
-function searchCustomer(searchData){
-
-        for (var key in searchData){
+        for (var key in searchData) {
             var outdata = '';
-            for (var subkey in searchData[key]){
+            for (var subkey in searchData[key]) {
                 document.getElementById(subkey).value = searchData[key][subkey];
                 outdata += subkey + ' ' + searchData[key][subkey] + ' ';
             }
         }
+    }
+    });
 }
 
 function searchServiceAjax(){
@@ -188,30 +185,47 @@ function searchServiceAjax(){
 $(document).ready(function () {
     $('#jobCategory').change(function () {
 
+        $('#serviceType').empty();
+
         var jobCatDropDown = document.getElementById('jobCategory').value;
-        
+
         $.ajax({
             url: '../Controller/serviceTypeSelectProcess.php',
             dataType: 'json',
             success: function serviceTypeDropDown(sTDropDown) {
-
-                for (var i = 0; i < sTDropDown.length; i++) {
-                    if (sTDropDown[i].categoryID == jobCatDropDown) {
-                        for (var key in sTDropDown){
-                            var outdata = '';
-                            for (var subkey in sTDropDown[key]){
-                                document.getElementById('serviceType').innerHTML = sTDropDown[key][subkey];
-                                outdata += subkey + ' ' + sTDropDown[key][subkey] + ' ';
-                            }
-                        }
-                            console.log(sTDropDown[i]);
+                for (var a = 0; a < sTDropDown.length; a++) {
+                    if (sTDropDown[a].categoryID == jobCatDropDown) {
+                        $('#serviceType').append('<option value="' + sTDropDown[a].serviceType + '">' + sTDropDown[a].serviceType + '</option>');
                     }
                 }
             }
-            });
         });
     });
+});
 
+$(document).ready(function (){
+    $('#serviceType').change(function(){
+
+        var startQuotePopulate = document.getElementById('serviceType').value;
+
+            $.ajax({
+                url: '../Controller/populateQuoteProcess.php',
+                dataType: 'json',
+                success: function populateQuote(popQuote) {
+
+                    for (var a = 0; a < popQuote.length; a++) {
+                        if (popQuote[a].serviceType == startQuotePopulate) {
+                            $('#serviceTime').html('<input value="' + popQuote[a].serviceTime + '">');
+                            $('#servicePrice').html('<input value="' + popQuote[a].servicePrice + '">');
+                               $('#serviceTime').val('' + popQuote[a].serviceTime + '');
+                               $('#servicePrice').val('' + popQuote[a].servicePrice + '');
+                        }
+                    }
+                }
+            });
+
+    });
+});
 
 function openQuoteConfirm(){
 
@@ -219,15 +233,6 @@ function openQuoteConfirm(){
     document.getElementById('popupbox').style.display = "block";
 
     jQuery("#popupbox").load("quoteConfirmPage.php");
-
-}
-
-function openQuoteRecent(){
-
-    document.getElementById('grey_background').style.display = "block";
-    document.getElementById('popupbox').style.display = "block";
-
-    jQuery("#popupbox").load("quoteRecentPage.php");
 
 }
 

@@ -64,16 +64,16 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                     </select>
                 </div>
                 <div>
-                    <label class="label_style">Service Type:</label><select class="input_style" name="serviceType">
+                    <label class="label_style">Service Type:</label>
+                    <select id="serviceType" class="input_style" name="serviceType">
                         <option>Please select a Service Type</option>
-                        <option id="serviceType"></option>
                     </select>
                 </div>
                 <div>
-                    <label class="label_style">Service Time:</label><input class="input_style" type="text" name="serviceTime" placeholder="service Time" >
+                    <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" placeholder="service Time" readonly>
                 </div>
                 <div>
-                    <label class="label_style">Service Price:</label><input class="input_style" type="text" name="servicePrice" placeholder="service Price">
+                    <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="service Price" readonly>
                 </div>
 
                 <button class="button_style" type="button" name="add__services">Request Quote</button>

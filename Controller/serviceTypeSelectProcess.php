@@ -7,7 +7,7 @@ require('../Model/database_functions.php');
 
 getServiceTypeDropDown();
 
-if($serviceTypeDropDown = getServiceTypeDropDown()){
+if($serviceTypeDropDown = getServiceTypeDropDown()) {
 
     echo json_encode($serviceTypeDropDown);
 
