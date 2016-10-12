@@ -1,5 +1,8 @@
 <?php
 
+
+$dateCreated = date('Y/m/d');
+
 /* Customer functions */
 
 function registerCustomer($username, $password, $firstname, $lastname, $email, $phone){
@@ -58,7 +61,63 @@ function getCustomerDetails($customerUsernameLoggedIn){
     return $result;
 }
 
+function createQuote($customerID){
+
+    global $conn;
+    $quoteSql = "INSERT INTO quotedatabase (customerID, dateCreated) VALUES (:customerID, NOW())";
+    $statement = $conn->prepare($quoteSql);
+    $statement->bindValue(':customerID', $customerID);
+    $statement->execute();
+    $createQuote = $statement;
+    $statement->closeCursor();
+    return $createQuote;
+}
+
+function addQuote($jobCategory, $serviceType, $serviceTime, $servicePrice){
+
+    global $conn;
+
+    $quoteIDSql = "SELECT quoteID FROM quoutedatabase";
+    $statement = $conn->prepare($quoteIDSql);
+    $statement->execute();
+    $lastInserted = $conn->lastInsertId();
+
+    $sql = "INSERT INTO quote_service (quoteID, categoryID, serviceType, serviceTime, servicePrice) VALUES (" . $lastInserted . ", :jobCategory, :serviceType, :serviceTime, :servicePrice)";
+    $statementOne = $conn->prepare($sql);
+    $statementOne->bindValue(':jobCategory', $jobCategory);
+    $statementOne->bindValue(':serviceType', $serviceType);
+    $statementOne->bindValue(':serviceTime', $serviceTime);
+    $statementOne->bindValue(':servicePrice', $servicePrice);
+    $addQuoteResult = $statementOne->execute();
+    $statementOne->closeCursor();
+    return $addQuoteResult;
+}
+
 /* Admin functions */
+
+function searchQuote($searchQuote){
+
+    global $conn;
+    $sql = "SELECT quoteID, customerID FROM quotedatabase  WHERE quoteID = :searchQuote";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':searchQuote', $searchQuote);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $result;
+}
+
+function viewQuote($viewQuote){
+
+    global $conn;
+    $sql = "SELECT A.quoteID, C.customerID, B.jobCategory, A.serviceType, A.serviceTime, A.servicePrice FROM quote_service AS A, service_category AS B, quotedatabase AS C, customer AS D WHERE A.categoryID=B.categoryID AND C.customerID=D.customerID AND A.quoteID = C.quoteID";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':viewQuote', $viewQuote);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $result;
+}
 
 function addService($categoryID, $serviceType, $serviceTime, $servicePrice){
 

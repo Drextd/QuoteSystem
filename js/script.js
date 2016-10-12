@@ -31,6 +31,12 @@ function serviceLoad(){
         window.location.href = "../View/manageServices.php";}, 2000);
 }
 
+function addQuoteDelay(){
+
+    setTimeout(function (){
+        window.location.href = "../View/customer_CP.php";}, 2000);
+}
+
 function runLogout(){
     window.location.href = "../Controller/logoutProcess.php";
 }
@@ -182,6 +188,25 @@ function searchServiceAjax(){
     });
 }
 
+function searchQuoteAjax() {
+    $.ajax({
+        url: '../Controller/searchQuoteProcess.php',
+        method: 'POST',
+        data: $('#searchQuoteForm').serialize(),
+        dataType: 'json',
+        success: function searchQuote(searchData) {
+
+            for (var key in searchData) {
+                var outdata = '';
+                for (var subkey in searchData[key]) {
+                    document.getElementById(subkey).value = searchData[key][subkey];
+                    outdata += subkey + ' ' + searchData[key][subkey] + ' ';
+                }
+            }
+        }
+    });
+}
+
 $(document).ready(function () {
     $('#jobCategory').change(function () {
 
@@ -240,7 +265,6 @@ function openQuoteManage(){
 
     document.getElementById('grey_background').style.display = "block";
     document.getElementById('popupbox').style.display = "block";
-
     jQuery("#popupbox").load("quoteManagePage.php");
 
 }

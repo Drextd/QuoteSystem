@@ -48,7 +48,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
     <section>
 
         <div class="form_container">
-            <form class="form_style" name="manageServiceForm" method="post" action="">
+            <form class="form_style" name="manageServiceForm" method="post" action="../Controller/addQuoteProcess.php">
                 <div>
                     <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory">
                         <option>Please select a Category</option>
@@ -76,7 +76,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                     <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="service Price" readonly>
                 </div>
 
-                <button class="button_style" type="button" name="add__services">Request Quote</button>
+                <button class="button_style" type="submit" name="add__services">Request Quote</button>
                 <button class="button_style" type="reset" name="reset_changes_services">Reset Quote Form</button>
             </form>
         </div>
@@ -88,7 +88,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
         <?php
 
         include 'footer.php';
-
+        
         ?>
 
     </footer>

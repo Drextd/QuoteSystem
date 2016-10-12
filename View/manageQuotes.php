@@ -45,15 +45,17 @@ $adminUsernameLogginIn = $_SESSION['username'];
 
     <section>
         <div class="form_container">
-            <form class="form_style" name="manageQuoteForm" method="post" action="">
+            <form class="form_style" id="searchQuoteForm" name="searchQuoteForm" method="post" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" name="" placeholder="Search quote here"><button class="search_button_style" type="submit" name="searchQuoteSubmit">Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quote here"><button class="search_button_style" type="button" name="quoteSearchSubmit" onclick="searchQuoteAjax()">Search</button>
+                </div>
+            </form>
+            <form class="form_style" id="viewQuoteFirst" name="viewQuoteFirst" method="post" action="">
+                <div>
+                    <label class="label_style">Quote ID:</label><input class="input_style" type="text" id="quoteID" name="quoteID" placeholder="Quote ID">
                 </div>
                 <div>
-                    <label class="label_style">Quote ID:</label><input class="input_style" type="text" name="quote_ID" placeholder="Quote ID">
-                </div>
-                <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" name="customer_ID" placeholder="Customer ID">
+                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customerID" placeholder="Customer ID">
                 </div>
 
                 <button class="button_style" type="button" name="view_quote" onclick="openQuoteManage()">View Quote</button>
