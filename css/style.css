@@ -8,13 +8,13 @@
 #container{
     position: fixed;
     left: 275px;
-    background: lightblue;
+    height: 100%;
     width: 100%;
 }
 
 header{
     width: 100%;
-    height: 15%;
+    height: 80px;
     background: #b3d4fc;
 }
 
@@ -53,7 +53,7 @@ nav ul li a{
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
 }
-.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active{
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active, .button_style_two:hover, .button_style_two:focus, .button_style_two:active{
     background-color: #b3d4fc;
     color: #0078ae;
 }
@@ -63,15 +63,17 @@ nav ul li a{
 }
 
 section{
-    width: 100%;
-    height: 100%;
-    background: lightyellow;
+    padding: 15px;
+
 }
 
 footer{
     width: 100%;
-    min-height: 100px;
-    background: lightgrey;
+    height: 80px;
+    background: #b3d4fc;
+    position: fixed;
+    left: 275px;
+    bottom: 0;
 }
 
 .clearAll{
@@ -80,6 +82,15 @@ footer{
 
 #header_image{
     text-align: center;
+}
+
+#styleDiv{
+    text-align: center;
+    border: 2px black solid;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+
 }
 
 #loginContainer{
@@ -124,6 +135,29 @@ footer{
     float: right;
 }
 
+.button_style_two{
+    display: inline-block;
+    color: #ffffff;
+    margin: 20px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #0078ae;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+
 .content_example1{
     width: 20%;
     height: 15%;
@@ -164,8 +198,6 @@ footer{
 
 .form_container{
     width: 100%;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .label_style{
@@ -180,6 +212,10 @@ footer{
     margin: 5px 20px;
     display: inline-block;
     font-size: 14px;
+}
+
+#showHide, #showHide2, #showHide3, #showHidesearchService{
+    display: none;
 }
 
 #grey_background{

@@ -6,14 +6,15 @@ require ('../Model/dbConnect.php');
 require('../Model/database_functions.php');
 include ('../View/header.php');
 
-$username = $_POST['customer_Username'];
-$password = $_POST['customer_Password'];
-$firstname = $_POST['customer_First_Name'];
-$lastname = $_POST['customer_Last_Name'];
-$email = $_POST['customer_Email'];
-$phone = $_POST['customer_Phone'];
+$customerID = $_POST['customerID'];
+$username = $_POST['customerUsername'];
+$password = $_POST['customerPass'];
+$firstName = $_POST['customerFirstName'];
+$lastName = $_POST['customerLastName'];
+$email = $_POST['customerEmail'];
+$phone = $_POST['customerPhone'];
 
-$result =  updateCustomer($username, $password, $firstname, $lastname, $email, $phone);
+$result =  updateCustomer($customerID, $username, $password, $firstName, $lastName, $email, $phone);
 
 if($result){
     

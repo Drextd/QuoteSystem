@@ -1,11 +1,5 @@
-<?php
-
-require ('../View/header.php');
-
-?>
 
 <body>
-
 
 <div class="form_container">
     <form class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php" onsubmit="return registerValidation()">
@@ -37,4 +31,3 @@ require ('../View/header.php');
 
 </div>
 </body>
-</html>

@@ -3,6 +3,8 @@ session_start();
 
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
+require ('../Model/dbConnect.php');
+require ('../Model/database_functions.php');
 
 $adminUsernameLoggedIn = $_SESSION['username'];
 
@@ -42,13 +44,49 @@ $adminUsernameLoggedIn = $_SESSION['username'];
     </header>
 
     <section>
-        <div class="form_container">
+
+            <div class="button_style_two" onclick="openAddService()">Add Service</div>
+            <div class="button_style_two" onclick="openSearchService()">Search Service</div>
+
+        <div id="showHide2">
+            <form class="form_style" name="manageServiceForm" method="post" action="../Controller/addServiceProcess.php">
+                <div>
+                    <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory">
+                        <option>Please select a Category</option>
+                        <?php
+
+                        $jobCatDropDown = getJobCategoryDropDown();
+
+                        foreach($jobCatDropDown as $row):
+                            echo "<option value=" . $row['categoryID'] . ">" . $row['jobCategory'] . "</option>";
+                        endforeach;
+
+                        ?>
+                    </select>
+                </div>
+                <div>
+                    <label class="label_style">Service Type:</label><input class="input_style" type="text" id="serviceType" name="serviceType" placeholder="Service Type">
+                </div>
+                <div>
+                    <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" placeholder="Service Time">
+                </div>
+                <div>
+                    <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
+                </div>
+
+                <button class="button_style" type="submit" name="add_services">Add Service</button>
+                <button class="button_style" type="reset" name="reset_changes_services">Reset Form</button>
+            </form>
+        </div>
+        
+        <div id="showHidesearchService">
                 <form class="form_style" id="searchServiceForm" name="searchServiceForm" method="post" action="#">
                     <div>
                         <label class="label_style">Search:</label><input class="input_style" type="text" id="searchServiceInput" name="searchServiceInput" placeholder="Search service here"><button class="search_button_style" type="button" name="searchServiceSubmit" onclick="searchServiceAjax()">Search</button>
                     </div>
                 </form>
-            <form class="form_style" id="manageServiceForm" name="manageServiceForm" method="post" action="#">
+            <div id="showHide3">
+            <form class="form_style" id="manageServiceForm" name="manageServiceForm" method="post" action="../Controller/updateServiceProcess.php">
                 <div>
                     <label class="label_style">Service ID:</label><input class="input_style" type="text" id="serviceID" name="serviceID" placeholder="Service ID">
                 </div>
@@ -65,12 +103,11 @@ $adminUsernameLoggedIn = $_SESSION['username'];
                     <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
                 </div>
 
-                <button class="button_style" type="button" name="save_changes_services">Save Changes</button>
+                <button class="button_style" type="submit" name="save_changes_services">Save Changes</button>
                 <button class="button_style" type="reset" name="reset_changes_services">Reset Form</button>
-                <button class="button_style" type="button" name="open_add_service" onclick="openAddService()">Add Service</button>
-
 
             </form>
+                </div>
         </div>
     </section>
 

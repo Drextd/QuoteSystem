@@ -42,7 +42,7 @@ $adminUsernameLoggedIn = $_SESSION['username'];
     </header>
 
     <section>
-        <div class="content_example3">List of quotes that need confirmation - printed from PHP in table form<button type="button" name="open_quote_confirm" onclick="openQuoteConfirm()">Click to confirm</button></div>
+        <div class="content_example3">There are X quotes that need to be processed, Go to Manage Quotes to begin.</div>
     </section>
 
     <footer>

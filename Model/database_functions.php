@@ -21,17 +21,17 @@ function registerCustomer($username, $password, $firstname, $lastname, $email, $
     return $result;
 }
 
-function updateCustomer($username, $password, $firstname, $lastname, $email, $phone){
+function updateCustomer($customerID, $username, $password, $firstName, $lastName, $email, $phone){
 
     global $conn;
-    $sql = "UPDATE customer SET customerUsername=:customerUsername, customerPass=:customerPass, customerFirstName=:customerFirstName, customerLastName=:customerLastName, customerEmail=:customerEmail, customerPhone=:customerPhone WHERE customerID=:categoryID";
+    $sql = "UPDATE customer SET customerUsername=:customerUsername, customerPass=:customerPass, customerFirstName=:customerFirstName, customerLastName=:customerLastName, customerEmail=:customerEmail, customerPhone=:customerPhone WHERE customerID='" . $customerID . "'";
     $statement = $conn->prepare($sql);
-    $statement->bindValue(':customer_Username', $username);
-    $statement->bindValue(':customer_Password', $password);
-    $statement->bindValue(':customer_First_Name', $firstname);
-    $statement->bindValue(':customer_Last_Name', $lastname);
-    $statement->bindValue(':customer_Email', $email);
-    $statement->bindValue(':customer_Phone', $phone);
+    $statement->bindValue(':customerUsername', $username);
+    $statement->bindValue(':customerPass', $password);
+    $statement->bindValue(':customerFirstName', $firstName);
+    $statement->bindValue(':customerLastName', $lastName);
+    $statement->bindValue(':customerEmail', $email);
+    $statement->bindValue(':customerPhone', $phone);
     $result = $statement->execute();
     $statement->closeCursor();
     return $result;
@@ -98,7 +98,7 @@ function addQuote($jobCategory, $serviceType, $serviceTime, $servicePrice){
 function searchQuote($searchQuote){
 
     global $conn;
-    $sql = "SELECT quoteID, customerID FROM quotedatabase  WHERE quoteID = :searchQuote";
+    $sql = "SELECT A.quoteID, customerID, jobCategory, serviceType, serviceTime, servicePrice FROM quotedatabase AS A JOIN quote_service AS B ON A.quoteID=B.quoteID JOIN service_category AS C ON B.categoryID=C.categoryID WHERE A.quoteID = :searchQuote";
     $statement = $conn->prepare($sql);
     $statement->bindValue(':searchQuote', $searchQuote);
     $statement->execute();
@@ -107,17 +107,6 @@ function searchQuote($searchQuote){
     return $result;
 }
 
-function viewQuote($viewQuote){
-
-    global $conn;
-    $sql = "SELECT A.quoteID, C.customerID, B.jobCategory, A.serviceType, A.serviceTime, A.servicePrice FROM quote_service AS A, service_category AS B, quotedatabase AS C, customer AS D WHERE A.categoryID=B.categoryID AND C.customerID=D.customerID AND A.quoteID = C.quoteID";
-    $statement = $conn->prepare($sql);
-    $statement->bindValue(':viewQuote', $viewQuote);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor();
-    return $result;
-}
 
 function addService($categoryID, $serviceType, $serviceTime, $servicePrice){
 
@@ -144,6 +133,20 @@ function searchService($searchService){
     $statement->closeCursor();
     return $result;
 }
+
+function updateService($serviceID,$serviceType, $serviceTime, $servicePrice){
+
+    global $conn;
+    $sql = "UPDATE services SET serviceType=:serviceType, serviceTime=:serviceTime, servicePrice=:servicePrice WHERE serviceID='" . $serviceID . "'";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':serviceType', $serviceType);
+    $statement->bindValue(':serviceTime', $serviceTime);
+    $statement->bindValue(':servicePrice', $servicePrice);
+    $result = $statement->execute();
+    $statement->closeCursor();
+    return $result;
+}
+
 
 /* Process user functions  */
 

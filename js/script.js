@@ -23,7 +23,7 @@ function registerDelay(){
 
 function updateDelay(){
     setTimeout(function (){
-        window.location.href = "./View/accountManagement.php";}, 2000);
+        window.location.href = "../View/admin_CP.php";}, 2000);
 }
 
 function serviceLoad(){
@@ -203,6 +203,8 @@ function searchQuoteAjax() {
                     outdata += subkey + ' ' + searchData[key][subkey] + ' ';
                 }
             }
+            $("#showHide").slideDown("medium", function() {
+            });
         }
     });
 }
@@ -252,33 +254,20 @@ $(document).ready(function (){
     });
 });
 
-function openQuoteConfirm(){
-
-    document.getElementById('grey_background').style.display = "block";
-    document.getElementById('popupbox').style.display = "block";
-
-    jQuery("#popupbox").load("quoteConfirmPage.php");
-
-}
-
-function openQuoteManage(){
-
-    document.getElementById('grey_background').style.display = "block";
-    document.getElementById('popupbox').style.display = "block";
-    jQuery("#popupbox").load("quoteManagePage.php");
-
-}
 
 function openAddService(){
+    $("#showHide2").toggle('slide');
+}
 
-    document.getElementById('grey_background').style.display = "block";
-    document.getElementById('popupbox').style.display = "block";
-
-    jQuery("#popupbox").load("addServicePage.php");
-
+function openSearchService(){
+    $("#showHidesearchService").toggle('slide');
+    $("#showHide3").toggle('slide');
 }
 
 function openRegistration(){
+
+    $("#grey_background").fadeIn();
+    $("#popupbox").fadeIn();
 
     document.getElementById('grey_background').style.display = "block";
     document.getElementById('popupbox').style.display = "block";
@@ -288,8 +277,8 @@ function openRegistration(){
 }
 
 function close_Popup(){
-    
-    document.getElementById('grey_background').style.display = "none";
-    document.getElementById('popupbox').style.display = "none";
+
+    $("#grey_background").fadeOut();
+    $("#popupbox").fadeOut();
 
 }

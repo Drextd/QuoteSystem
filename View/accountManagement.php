@@ -48,7 +48,7 @@ $adminUsernameLoggedIn = $_SESSION['username'];
                     <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer here"><button class="search_button_style" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
                 </div>
             </form>
-            <form class="form_style" id="CustomerForm" method="post" action="#">
+            <form class="form_style" id="CustomerForm" method="post" action="../Controller/updateCustomerProcess.php">
                 <div>
                     <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customerID" placeholder="Customer ID">
                 </div>
@@ -71,7 +71,7 @@ $adminUsernameLoggedIn = $_SESSION['username'];
                     <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" placeholder="Phone">
                 </div>
 
-                <button class="button_style" type="button" name="save_changes">Save Changes</button>
+                <button class="button_style" type="submit" name="save_changes">Save Changes</button>
                 <button class="button_style" type="reset" name="reset_changes">Reset Form</button>
             </form>
         </div>
