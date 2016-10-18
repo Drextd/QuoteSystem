@@ -1,10 +1,18 @@
 <?php
 session_start();
 
+if($_SESSION['userType'] == "customer"){
+    header("Location: ../View/customer_CP.php");
+}
+
 require ('../Controller/userSecurityCheck.php');
+require ('../Model/dbConnect.php');
+require ('../Model/database_functions.php');
 require ('../View/header.php');
 
 $adminUsernameLoggedIn = $_SESSION['username'];
+
+$countQuotes = countQuotes();
 
 ?>
 
@@ -38,11 +46,11 @@ $adminUsernameLoggedIn = $_SESSION['username'];
 <div id="container">
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
     <section>
-        <div class="content_example3">There are X quotes that need to be processed, Go to Manage Quotes to begin.</div>
+        <div class="content_example3">There are <span class="highlight"><?php echo "$countQuotes" ?></span> quotes that need to be processed, Go to Manage Quotes to begin.</div>
     </section>
 
     <footer>

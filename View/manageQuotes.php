@@ -1,8 +1,14 @@
 <?php
 session_start();
 
+if($_SESSION['userType'] == "customer"){
+    header("Location: ../View/customer_CP.php");
+}
+
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
+require ('../Model/dbConnect.php');
+require ('../Model/database_functions.php');
 
 $adminUsernameLogginIn = $_SESSION['username'];
 
@@ -38,17 +44,30 @@ $adminUsernameLogginIn = $_SESSION['username'];
 <div id="container">
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
     <section>
+
         <div class="form_container">
             <form class="form_style" id="searchQuoteForm" name="searchQuoteForm" method="post" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quote here"><button class="search_button_style" type="button" name="quoteSearchSubmit" onclick="searchQuoteAjax()">Click to display</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quote here">
+                    <button class="buttonStyleTwo" type="button" id="quoteSearchSubmit" name="quoteSearchSubmit" onclick="searchQuoteAjax()">Click to display</button>
+                    <div id="quoteToBeProcessed"><b>Quotes to be processed:</b><br>
+                        <?php
+
+                        $showQuotesPending = showQuotesPending();
+
+                        foreach($showQuotesPending as $row):
+                            echo "<span class='spacingAll'>" . $row['quoteID'] . "</span>";
+                        endforeach;
+
+                        ?>
+                    </div>
                 </div>
             </form>
-            <div id=showHide>
+            <div id="searchQuote" class="showHideSlideRight">
                 <form class="form_style" id="viewQuote" name="viewQuote" method="post" action="#">
                     <div>
                         <label class="label_style">Quote ID:</label><input class="input_style" type="text" id="quoteID" name="quoteID" placeholder="Quote ID">
@@ -69,14 +88,14 @@ $adminUsernameLogginIn = $_SESSION['username'];
                         <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
                     </div>
 
-                    <button class="popup_button_style" type="submit" id="confirmQuoteChanges" name="confirmQuoteChanges">Confirm Quote</button>
-                    <button class="popup_button_style" type="reset" name="reset_changes">Reset Form</button>
+                    <button class="buttonStyleThree" type="submit" id="confirmQuote" name="confirmQuote">Confirm Quote</button>
+                    <button class="buttonStyleThree" type="submit" id="declineQuote" name="declineQuote">Decline Quote</button>
+                    <button class="buttonStyleThree" type="reset" name="reset_changes">Reset Form</button>
 
                 </form>
             </div>
         </div>
     </section>
-
     <footer>
 
         <?php

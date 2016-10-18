@@ -1,10 +1,16 @@
 <?php
 session_start();
 
+if($_SESSION['userType'] == "customer"){
+    header("Location: ../View/customer_CP.php");
+}
+
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
 
 $adminUsernameLoggedIn = $_SESSION['username'];
+
+
 
 ?>
 
@@ -38,42 +44,44 @@ $adminUsernameLoggedIn = $_SESSION['username'];
 <div id="container">
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
     <section>
         <div class="form_container">
             <form class="form_style" id="searchCustomerForm" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer here"><button class="search_button_style" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer here"><button class="buttonStyleTwo" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
                 </div>
             </form>
-            <form class="form_style" id="CustomerForm" method="post" action="../Controller/updateCustomerProcess.php">
-                <div>
-                    <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customerID" placeholder="Customer ID">
-                </div>
-                <div>
-                    <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customerUsername" placeholder="Username">
-                </div>
-                <div>
-                    <label class="label_style">Password:</label><input class="input_style" type="text" id="customerPass" name="customerPass" placeholder="Password">
-                </div>
-                <div>
-                    <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customerFirstName" placeholder="First Name">
-                </div>
-                <div>
-                    <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customerLastName" placeholder="Last Name">
-                </div>
-                <div>
-                    <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customerEmail" placeholder="Email">
-                </div>
-                <div>
-                    <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" placeholder="Phone">
-                </div>
+                <div id="searchCustomer" class="showHideSlideRight">
+                    <form class="form_style" id="CustomerForm" method="post" action="../Controller/updateCustomerProcess.php">
+                        <div>
+                            <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customerID" placeholder="Customer ID">
+                        </div>
+                        <div>
+                            <label class="label_style">Username:</label><input class="input_style" type="text" id="customerUsername" name="customerUsername" placeholder="Username">
+                        </div>
+                        <div>
+                            <label class="label_style">Password:</label><input class="input_style" type="text" id="customerPass" name="customerPass" placeholder="Password">
+                        </div>
+                        <div>
+                            <label class="label_style">First Name:</label><input class="input_style" type="text" id="customerFirstName" name="customerFirstName" placeholder="First Name">
+                        </div>
+                        <div>
+                            <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customerLastName" name="customerLastName" placeholder="Last Name">
+                        </div>
+                        <div>
+                            <label class="label_style">Email:</label><input class="input_style" type="email" id="customerEmail" name="customerEmail" placeholder="Email">
+                        </div>
+                        <div>
+                            <label class="label_style">Phone:</label><input class="input_style" type="text" id="customerPhone" name="customerPhone" placeholder="Phone">
+                        </div>
 
-                <button class="button_style" type="submit" name="save_changes">Save Changes</button>
-                <button class="button_style" type="reset" name="reset_changes">Reset Form</button>
-            </form>
+                        <button class="buttonStyleThree" type="submit" name="save_changes">Save Changes</button>
+                        <button class="buttonStyleThree" type="reset" name="reset_changes">Reset Form</button>
+                    </form>
+                </div>
         </div>
     </section>
 

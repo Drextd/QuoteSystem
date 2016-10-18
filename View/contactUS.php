@@ -36,7 +36,7 @@ require ('../View/header.php');
 
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
 

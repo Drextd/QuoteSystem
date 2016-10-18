@@ -40,14 +40,12 @@
 
     
     <header>
-            <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
     <section>
-        <div class="content_example1">Picture</div>
         <div class="content_example2">Business Overview</div>
-        <div class="content_example1">Picture</div>
-        <div class="content_example2">Click here for register form<button type="button" name="open_registration" onclick="openRegistration()">Click to Register</button></div>
+        <div class="content_example2">Click here for register form<button class="buttonStyleTwo" type="button" name="open_registration" onclick="openRegistration()">Click to Register</button></div>
     </section>
 
     <footer>

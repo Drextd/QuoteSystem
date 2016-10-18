@@ -165,6 +165,7 @@ function searchCustomerAjax(){
                 outdata += subkey + ' ' + searchData[key][subkey] + ' ';
             }
         }
+            $("#searchCustomer").toggleClass('slideRightAnimation');
     }
     });
 }
@@ -203,8 +204,7 @@ function searchQuoteAjax() {
                     outdata += subkey + ' ' + searchData[key][subkey] + ' ';
                 }
             }
-            $("#showHide").slideDown("medium", function() {
-            });
+            $("#searchQuote").toggleClass('slideRightAnimation');
         }
     });
 }
@@ -254,16 +254,6 @@ $(document).ready(function (){
     });
 });
 
-
-function openAddService(){
-    $("#showHide2").toggle('slide');
-}
-
-function openSearchService(){
-    $("#showHidesearchService").toggle('slide');
-    $("#showHide3").toggle('slide');
-}
-
 function openRegistration(){
 
     $("#grey_background").fadeIn();
@@ -282,3 +272,18 @@ function close_Popup(){
     $("#popupbox").fadeOut();
 
 }
+
+//--     CSS animation functions     --//
+
+function slideRightEffect1(){
+
+    $("#addService").toggleClass('slideRightAnimation');
+
+}
+
+function slideRightEffect2(){
+
+    $("#searchService").toggleClass('slideRightAnimation');
+
+}
+

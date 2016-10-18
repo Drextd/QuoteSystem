@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if($_SESSION['userType'] == "admin"){
+    header("Location: ../View/admin_CP.php");
+}
+
 require ('../Controller/userSecurityCheck.php');
 require ('../Model/dbConnect.php');
 require ('../Model/database_functions.php');
@@ -40,7 +44,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
 <div id="container">
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
 
@@ -76,8 +80,8 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                     <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="service Price" readonly>
                 </div>
 
-                <button class="button_style" type="submit" name="add__services">Request Quote</button>
-                <button class="button_style" type="reset" name="reset_changes_services">Reset Quote Form</button>
+                <button class="buttonStyleThree" type="submit" name="add__services">Request Quote</button>
+                <button class="buttonStyleThree" type="reset" name="reset_changes_services">Reset Quote Form</button>
             </form>
         </div>
 

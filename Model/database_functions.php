@@ -1,8 +1,5 @@
 <?php
 
-
-$dateCreated = date('Y/m/d');
-
 /* Customer functions */
 
 function registerCustomer($username, $password, $firstname, $lastname, $email, $phone){
@@ -94,6 +91,63 @@ function addQuote($jobCategory, $serviceType, $serviceTime, $servicePrice){
 }
 
 /* Admin functions */
+
+function countQuotes(){
+
+    global $conn;
+    $sql = "SELECT * FROM quotedatabase WHERE status = 'P'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $statement->fetchAll();
+    $statement->closeCursor();
+    $countQuotes = $statement->rowCount();
+    return $countQuotes;
+}
+
+function showQuotesPending(){
+
+    global $conn;
+    $sql = "SELECT quoteID FROM quotedatabase WHERE status = 'P'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $showQuotesPending = $statement->fetchAll();
+    $statement->closeCursor();
+    return $showQuotesPending;
+}
+
+function showCustomerQuotesPending($customerID){
+
+    global $conn;
+    $sql = "SELECT quoteID, status FROM quotedatabase WHERE customerID='" . $customerID. "' AND status = 'P'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $showAllQuotes = $statement->fetchAll();
+    $statement->closeCursor();
+    return $showAllQuotes;
+}
+
+function showCustomerQuotesApproved($customerID){
+
+    global $conn;
+    $sql = "SELECT quoteID, status FROM quotedatabase WHERE customerID='" . $customerID. "' AND status = 'A'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $showAllQuotes = $statement->fetchAll();
+    $statement->closeCursor();
+    return $showAllQuotes;
+}
+
+function showCustomerQuotesDeclined($customerID){
+
+    global $conn;
+    $sql = "SELECT quoteID, status FROM quotedatabase WHERE customerID='" . $customerID. "' AND status = 'D'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $showAllQuotes = $statement->fetchAll();
+    $statement->closeCursor();
+    return $showAllQuotes;
+}
+
 
 function searchQuote($searchQuote){
 

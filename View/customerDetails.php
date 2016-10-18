@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if($_SESSION['userType'] == "admin"){
+    header("Location: ../View/admin_CP.php");
+}
+
 require ('../Controller/userSecurityCheck.php');
 require ('../Model/database_functions.php');
 require ('../Model/dbConnect.php');
@@ -43,7 +47,7 @@ $result = getCustomerDetails($customerUsernameLoggedIn);
 <div id="container">
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
 

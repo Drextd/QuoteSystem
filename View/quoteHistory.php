@@ -1,8 +1,14 @@
 <?php
 session_start();
 
+if($_SESSION['userType'] == "admin"){
+    header("Location: ../View/admin_CP.php");
+}
+
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
+require ('../Model/dbConnect.php');
+require ('../Model/database_functions.php');
 
 $customerUsernameLoggedIn = $_SESSION['username'];
 
@@ -38,17 +44,67 @@ $customerUsernameLoggedIn = $_SESSION['username'];
 <div id="container">
 
     <header>
-        <div id="headerImage">Header Image</div>
+        <h1>QuoteSystem - TAFE Project</h1>
     </header>
 
 
 
     <section>
-        <div class="content_example3">display quote 1 - will have pagination for more than 5</div>
-        <div class="content_example3">display quote 2</div>
-        <div class="content_example3">display quote 3</div>
-        <div class="content_example3">display quote 4</div>
-        <div class="content_example3">display quote 5</div>
+        <div id="quoteHistoryMainContainer">
+            <div class="quoteHistoryContainer">
+                <h3>Quote awaiting processing</h3>
+    
+                <?php
+    
+                $customerID = $_SESSION['userID'];
+    
+                $showCustomerQuotes = showCustomerQuotesPending($customerID);
+    
+                foreach($showCustomerQuotes as $row):
+                    echo "<span class='spacingCustomer'>" . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . "</span>";
+                endforeach;
+    
+                ?>
+            </div>
+            <div class="quoteHistoryContainer">
+                <h3>Approved Quotes</h3>
+    
+                <?php
+    
+                $customerID = $_SESSION['userID'];
+    
+                $showCustomerQuotes = showCustomerQuotesApproved($customerID);
+    
+                foreach($showCustomerQuotes as $row):
+                    echo "<span class='spacingCustomer'>" . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . "</span>";
+                endforeach;
+    
+                ?>
+            </div>
+            <div class="quoteHistoryContainer">
+                <h3>Declined Quotes</h3>
+    
+                <?php
+    
+                $customerID = $_SESSION['userID'];
+    
+                $showCustomerQuotes = showCustomerQuotesDeclined($customerID);
+    
+                foreach($showCustomerQuotes as $row):
+                    echo "<span class='spacingCustomer'>" . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . "</span>";
+                endforeach;
+    
+                ?>
+            </div>
+        </div>
+
+        <fieldset id="legendPosition">
+            <legend>Legend</legend>
+            <div>P = Pending quotes, A = Approved quotes, D = Declined quotes</div>
+        </fieldset>
+
+
+        
     </section>
 
     <footer>
