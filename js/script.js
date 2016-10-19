@@ -254,6 +254,55 @@ $(document).ready(function (){
     });
 });
 
+function viewClick($quoteID){
+    $.ajax({
+        url: '../Controller/viewQuoteProcess.php?quoteID='+$quoteID,
+        dataType: 'json',
+        method: 'GET',
+        success: function viewQuote(viewData) {
+
+            for (var key in viewData) {
+                var outdata = '';
+                for (var subkey in viewData[key]) {
+                    document.getElementById(subkey).value = viewData[key][subkey];
+                    outdata += subkey + ' ' + viewData[key][subkey] + ' ';
+                }
+            }
+            $("#viewQuote").toggleClass('slideRightAnimation');
+        }
+    });
+}
+
+function changeStatusA($quoteID){
+
+    $.ajax({
+        url: '../Controller/changeStatusAProcess.php?quoteID='+$quoteID,
+        dataType: 'json',
+        method: 'GET',
+        success: function changeStatusA() {
+
+        }
+    });
+}
+
+function changeStatusD($quoteID){
+
+    $.ajax({
+        url: '../Controller/changeStatusDProcess.php?quoteID='+$quoteID,
+        dataType: 'json',
+        method: 'GET',
+        success: function changeStatusD() {
+
+
+        }
+    });
+}
+
+
+
+
+// Open Close //
+
 function openRegistration(){
 
     $("#grey_background").fadeIn();
@@ -278,12 +327,15 @@ function close_Popup(){
 function slideRightEffect1(){
 
     $("#addService").toggleClass('slideRightAnimation');
-
 }
 
 function slideRightEffect2(){
 
     $("#searchService").toggleClass('slideRightAnimation');
+}
 
+function closeViewQuote(){
+
+    $("#viewQuote").toggleClass('slideRightAnimation');
 }
 

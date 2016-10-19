@@ -90,7 +90,40 @@ function addQuote($jobCategory, $serviceType, $serviceTime, $servicePrice){
     return $addQuoteResult;
 }
 
+function viewQuote($viewQuote){
+
+    global $conn;
+    $sql = "SELECT A.quoteID, customerID, jobCategory, serviceType, serviceTime, servicePrice FROM quotedatabase AS A JOIN quote_service AS B ON A.quoteID=B.quoteID JOIN service_category AS C ON B.categoryID=C.categoryID WHERE A.quoteID = :viewQuote";
+    $statement = $conn->prepare($sql);
+    $statement->bindValue(':viewQuote', $viewQuote);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $result;
+}
+
 /* Admin functions */
+
+function changeStatusA($quoteID){
+
+    global $conn;
+    $sql = "UPDATE quotedatabase SET status = 'A' WHERE quoteID='". $quoteID ."'";
+    $statement = $conn->prepare($sql);
+    $result = $statement->execute();
+    $statement->closeCursor();
+    return $result;
+}
+
+function changeStatusD($quoteID){
+
+    global $conn;
+    $sql = "UPDATE quotedatabase SET status = 'D' WHERE quoteID='". $quoteID ."'";
+    $statement = $conn->prepare($sql);
+    $result = $statement->execute();
+    $statement->closeCursor();
+    return $result;
+
+}
 
 function countQuotes(){
 

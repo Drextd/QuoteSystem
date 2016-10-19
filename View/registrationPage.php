@@ -22,9 +22,9 @@
             <label class="label_style">Phone:</label><input class="input_style" type="text" id="customer_Phone" name="customer_Phone" placeholder="Phone" pattern="^[0-9].{1,10}+$">
         </div>
 
-        <button class="buttonStyleTwo" type="submit" name="register">Register!</button>
-        <button class="buttonStyleTwo" type="reset" name="reset_changes">Reset Form</button>
-        <button class="buttonStyleTwo" onclick="close_Popup()" type="button" name="closePopup">Close</button>
+        <button class="buttonStyleThree" type="submit" name="register">Register!</button>
+        <button class="buttonStyleThree" type="reset" name="reset_changes">Reset Form</button>
+        <button class="buttonStyleThree" onclick="close_Popup()" type="button" name="closePopup">Close</button>
 
     </form>
 

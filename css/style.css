@@ -5,6 +5,18 @@
     padding: 0;
 }
 
+#noScriptStyle{
+    position: fixed;
+    background: #ffffff;
+    color: #6eac2c;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    z-index: 1;
+    text-align: center;
+}
+
+
 #container{
     position: fixed;
     left: 275px;
@@ -16,6 +28,7 @@ header{
     width: 100%;
     height: 80px;
     background: #b3d4fc;
+    padding-left: 25px;
 }
 
 h1{
@@ -23,7 +36,8 @@ h1{
 }
 
 h3{
-    margin-bottom: 35px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 nav{
@@ -61,7 +75,10 @@ nav ul li a{
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
 }
-.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active, .buttonStyleTwo:hover, .buttonStyleTwo:focus, .buttonStyleTwo:active{
+.hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active,
+.buttonStyleTwo:hover, .buttonStyleTwo:focus, .buttonStyleTwo:active,
+.buttonStyleThree:hover, .buttonStyleThree:focus, .buttonStyleThree:active,
+.buttonStyleFour:hover, .buttonStyleFour:focus, .buttonStyleFour:active{
     background-color: #b3d4fc;
     color: #0078ae;
     cursor: pointer;
@@ -83,6 +100,7 @@ footer{
     position: fixed;
     left: 275px;
     bottom: 0;
+    padding-left: 25px;
 }
 
 .clearAll{
@@ -145,7 +163,6 @@ footer{
 }
 
 .buttonStyleTwo{
-    display: block;
     color: #ffffff;
     margin: 15px;
     width: 100px;
@@ -190,6 +207,29 @@ footer{
     transition-property: color, background-color;
 }
 
+.buttonStyleFour{
+    display: inline-block;
+    color: #ffffff;
+    margin: 5px 15px;
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    background: #0078ae;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: color, background-color;
+    transition-property: color, background-color;
+}
+
 
 .showHideSlideRight{
     display: none;
@@ -208,8 +248,7 @@ footer{
 
     0% {opacity: 0; transform: translateX(-10%)}
     25% {opacity: 0.25; transform: translateX(-5%)}
-    50% {opacity: 0.5; transform: translateX(0%)}
-    75% {opacity: 0.75;}
+    50% {opacity: 0.75; transform: translateX(0%)}
     100% {opacity: 1;}
 
 }
@@ -264,10 +303,6 @@ footer{
     margin: 5px 20px;
     display: inline-block;
     font-size: 14px;
-}
-
-#showHide, #showHide2, #showHide3, #showHidesearchService{
-    display: none;
 }
 
 #grey_background{
@@ -337,11 +372,10 @@ footer{
 
 .spacingCustomer{
     display: block;
-    margin-top: 10px;
 }
 
 .widthSpacing{
-    margin-left: 100px;
+    margin-left: 40px;
 }
 
 #searchQuote{
@@ -350,7 +384,7 @@ footer{
 
 .quoteHistoryContainer{
     display: inline-block;
-    margin-right: 80px;
+    margin-right: 60px;
 }
 
 #quoteHistoryMainContainer{

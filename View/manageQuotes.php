@@ -68,7 +68,7 @@ $adminUsernameLogginIn = $_SESSION['username'];
                 </div>
             </form>
             <div id="searchQuote" class="showHideSlideRight">
-                <form class="form_style" id="viewQuote" name="viewQuote" method="post" action="#">
+                <form class="form_style" id="viewQuote" name="viewQuote">
                     <div>
                         <label class="label_style">Quote ID:</label><input class="input_style" type="text" id="quoteID" name="quoteID" placeholder="Quote ID">
                     </div>
@@ -88,9 +88,8 @@ $adminUsernameLogginIn = $_SESSION['username'];
                         <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
                     </div>
 
-                    <button class="buttonStyleThree" type="submit" id="confirmQuote" name="confirmQuote">Confirm Quote</button>
-                    <button class="buttonStyleThree" type="submit" id="declineQuote" name="declineQuote">Decline Quote</button>
-                    <button class="buttonStyleThree" type="reset" name="reset_changes">Reset Form</button>
+                    <button class="buttonStyleThree" type="button" id="confirmQuote" name="confirmQuote" onclick="changeStatusA(document.getElementById('quoteID').value)">Confirm Quote</button>
+                    <button class="buttonStyleThree" type="button" id="declineQuote" name="declineQuote" onclick="changeStatusD(document.getElementById('quoteID').value)">Decline Quote</button>
 
                 </form>
             </div>
