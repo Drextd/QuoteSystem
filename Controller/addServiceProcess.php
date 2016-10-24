@@ -6,10 +6,10 @@ require ('../Model/dbConnect.php');
 require('../Model/database_functions.php');
 include ('../View/header.php');
 
-$categoryID = $_POST['jobCategory'];
-$serviceType = $_POST['serviceType'];
-$serviceTime = $_POST['serviceTime'];
-$servicePrice = $_POST['servicePrice'];
+$categoryID = $_POST['jobCategoryAdd'];
+$serviceType = $_POST['serviceTypeAdd'];
+$serviceTime = $_POST['serviceTimeAdd'];
+$servicePrice = $_POST['servicePriceAdd'];
 
 $result =  addService($categoryID, $serviceType, $serviceTime, $servicePrice);
 

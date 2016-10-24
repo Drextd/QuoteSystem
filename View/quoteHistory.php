@@ -41,6 +41,12 @@ $customerUsernameLoggedIn = $_SESSION['username'];
         <li><a class="hvr-fade" href="customerDetails.php">Customer Details</a></li>
     </ul>
 
+    <ul class="rslides">
+        <li><img src="../img/carpentry.jpg" alt=""></li>
+        <li><img src="../img/electrician.jpeg" alt=""></li>
+        <li><img src="../img/plumbing.jpg" alt=""></li>
+    </ul>
+
 </nav>
 
 <div id="container">
@@ -106,7 +112,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                             <label class="label_style">Quote ID:</label><input class="input_style" type="text" id="quoteID" name="quoteID" placeholder="Quote ID" readonly>
                         </div>
                         <div>
-                            <label class="label_style">Customer ID:</label><input class="input_style" type="text" id="customerID" name="customerID" placeholder="Customer ID" readonly>
+                            <input class="input_style" id="customerID" name="customerID" type="hidden"  readonly>
                         </div>
                         <div>
                             <label class="label_style">Job Category:</label><input class="input_style" type="text" id="jobCategory" name="jobCategory" placeholder="Job Category" readonly>

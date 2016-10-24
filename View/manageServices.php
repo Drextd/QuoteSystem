@@ -14,6 +14,11 @@ $adminUsernameLoggedIn = $_SESSION['username'];
 
 ?>
 
+<link rel="stylesheet" href="../jquery-ui-1.12.1.tabs/jquery-ui.css">
+<link rel="stylesheet" href="../jquery-ui-1.12.1.tabs/jquery-ui.min.css">
+<script src="../jquery-ui-1.12.1.tabs/jquery-ui.js"></script>
+<script src="../jquery-ui-1.12.1.tabs/jquery-ui.min.js"></script>
+
 <body>
 
 <nav>
@@ -39,6 +44,12 @@ $adminUsernameLoggedIn = $_SESSION['username'];
         <li><a class="hvr-fade, activeTab" href="#">Manage Services</a></li>
     </ul>
 
+    <ul class="rslides">
+        <li><img src="../img/carpentry.jpg" alt=""></li>
+        <li><img src="../img/electrician.jpeg" alt=""></li>
+        <li><img src="../img/plumbing.jpg" alt=""></li>
+    </ul>
+
 </nav>
 
 <div id="container">
@@ -49,68 +60,67 @@ $adminUsernameLoggedIn = $_SESSION['username'];
 
     <section>
 
-            <div class="buttonStyleTwo" onclick="slideRightEffect1()">Add Service</div>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Add Service</a></li>
+                <li><a href="#tabs-2">Search Service</a></li>
+            </ul>
+            <div id="tabs-1">
+                <form class="form_style" name="manageServiceForm" method="post" action="../Controller/addServiceProcess.php">
+                    <div>
+                        <label class="label_style">Job Category:</label><select class="input_style" name="jobCategoryAdd">
+                            <option>Please select a Category</option>
+                            <?php
 
-        <div id="addService" class="showHideSlideRight">
-            <form class="form_style" name="manageServiceForm" method="post" action="../Controller/addServiceProcess.php">
-                <div>
-                    <label class="label_style">Job Category:</label><select class="input_style" id="jobCategory" name="jobCategory">
-                        <option>Please select a Category</option>
-                        <?php
+                            $jobCatDropDown = getJobCategoryDropDown();
 
-                        $jobCatDropDown = getJobCategoryDropDown();
+                            foreach($jobCatDropDown as $row):
+                                echo "<option value=" . $row['categoryID'] . ">" . $row['jobCategory'] . "</option>";
+                            endforeach;
 
-                        foreach($jobCatDropDown as $row):
-                            echo "<option value=" . $row['categoryID'] . ">" . $row['jobCategory'] . "</option>";
-                        endforeach;
+                            ?>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label_style">Service Type:</label><input class="input_style" type="text" name="serviceTypeAdd" placeholder="Service Type">
+                    </div>
+                    <div>
+                        <label class="label_style">Service Time:</label><input class="input_style" type="text" name="serviceTimeAdd" placeholder="Service Time">
+                    </div>
+                    <div>
+                        <label class="label_style">Service Price:</label><input class="input_style" type="text" name="servicePriceAdd" placeholder="Service Price">
+                    </div>
 
-                        ?>
-                    </select>
-                </div>
-                <div>
-                    <label class="label_style">Service Type:</label><input class="input_style" type="text" id="serviceType" name="serviceType" placeholder="Service Type">
-                </div>
-                <div>
-                    <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" placeholder="Service Time">
-                </div>
-                <div>
-                    <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
-                </div>
-
-                <button class="buttonStyleThree" type="submit" name="add_services">Add Service to System</button>
-                <button class="buttonStyleThree" type="reset" name="reset_changes_services">Reset Form</button>
-            </form>
-        </div>
-
-        <div class="buttonStyleTwo" onclick="slideRightEffect2()">Search Service</div>
-
-        <div id="searchService" class="showHideSlideRight">
+                    <button class="buttonStyleThree" type="submit" name="add_services">Add Service to System</button>
+                    <button class="buttonStyleThree" type="reset" name="reset_changes_services">Reset Form</button>
+                </form>
+            </div>
+            <div id="tabs-2">
                 <form class="form_style" id="searchServiceForm" name="searchServiceForm" method="post" action="#">
                     <div>
-                        <label class="label_style">Search:</label><input class="input_style" type="text" id="searchServiceInput" name="searchServiceInput" placeholder="Search service here"><button class="buttonStyleTwo" type="button" name="searchServiceSubmit" onclick="searchServiceAjax()">Search</button>
+                        <label class="label_style">Search:</label><input class="input_style" type="text" id="searchServiceInput" name="searchServiceInput" placeholder="Search serviceID"><button class="buttonStyleTwo" type="button" name="searchServiceSubmit" onclick="searchServiceAjax()">Search</button>
                     </div>
                 </form>
-            <form class="form_style" id="manageServiceForm" name="manageServiceForm" method="post" action="../Controller/updateServiceProcess.php">
-                <div>
-                    <label class="label_style">Service ID:</label><input class="input_style" type="text" id="serviceID" name="serviceID" placeholder="Service ID">
-                </div>
-                <div>
-                    <label class="label_style">Job Category:</label><input class="input_style" type="text" id="jobCategory" name="jobCategory" placeholder="Job Category">
-                </div>
-                <div>
-                    <label class="label_style">Service Type:</label><input class="input_style" type="text" id="serviceType" name="serviceType" placeholder="Service Type">
-                </div>
-                <div>
-                    <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" placeholder="Service Time">
-                </div>
-                <div>
-                    <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
-                </div>
-
-                <button class="buttonStyleThree" type="submit" name="save_changes_services">Save Changes</button>
-                <button class="buttonStyleThree" type="reset" name="reset_changes_services">Reset Form</button>
-
-            </form>
+                <form class="form_style" id="manageServiceForm" name="manageServiceForm" method="post" action="../Controller/updateServiceProcess.php">
+                    <div>
+                        <label class="label_style">Service ID:</label><input class="input_style" type="text" id="serviceID" name="serviceID" placeholder="Service ID">
+                    </div>
+                    <div>
+                        <label class="label_style">Job Category:</label><input class="input_style" type="text" id="jobCategory" name="jobCategory" placeholder="Job Category">
+                    </div>
+                    <div>
+                        <label class="label_style">Service Type:</label><input class="input_style" type="text" id="serviceType" name="serviceType" placeholder="Service Type">
+                    </div>
+                    <div>
+                        <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" placeholder="Service Time">
+                    </div>
+                    <div>
+                        <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price">
+                    </div>
+                        <button class="buttonStyleThree" type="submit" name="save_changes_services">Save Changes</button>
+                        <button class="buttonStyleThree" type="reset" name="reset_changes_services">Reset Form</button>
+                </form>
+            </div>
         </div>
         </div>
     </section>

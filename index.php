@@ -6,13 +6,12 @@
     <link href="./css/style.css" type="text/css" rel="stylesheet">
     <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/responsiveslides.min.js" type="text/javascript"></script>
     <noscript>
         <div id="noScriptStyle">Javascript is not enabled, Please enable or change browser.</div>
     </noscript>
 </head>
 <body>
-
-
 
 <nav>
     
@@ -35,6 +34,12 @@
         <li><a class="hvr-fade, activeTab" href="#">Home</a></li>
         <li><a class="hvr-fade" href="View/services.php">Services</a></li>
         <li><a class="hvr-fade" href="View/contactUS.php">Contact Us</a></li>
+    </ul>
+
+    <ul class="rslides">
+        <li><img src="img/carpentry.jpg" alt=""></li>
+        <li><img src="img/electrician.jpeg" alt=""></li>
+        <li><img src="img/plumbing.jpg" alt=""></li>
     </ul>
 
 </nav>

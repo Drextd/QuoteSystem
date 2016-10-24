@@ -39,6 +39,12 @@ $adminUsernameLoggedIn = $_SESSION['username'];
         <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
     </ul>
 
+    <ul class="rslides">
+        <li><img src="../img/carpentry.jpg" alt=""></li>
+        <li><img src="../img/electrician.jpeg" alt=""></li>
+        <li><img src="../img/plumbing.jpg" alt=""></li>
+    </ul>
+
 </nav>
 
 <div id="container">
@@ -51,7 +57,7 @@ $adminUsernameLoggedIn = $_SESSION['username'];
         <div class="form_container">
             <form class="form_style" id="searchCustomerForm" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer here"><button class="buttonStyleTwo" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer username"><button class="buttonStyleTwo" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
                 </div>
             </form>
                 <div id="searchCustomer" class="showHideSlideRight">

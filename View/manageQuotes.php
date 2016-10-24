@@ -39,6 +39,12 @@ $adminUsernameLogginIn = $_SESSION['username'];
         <li><a class="hvr-fade" href="manageServices.php">Manage Services</a></li>
     </ul>
 
+    <ul class="rslides">
+        <li><img src="../img/carpentry.jpg" alt=""></li>
+        <li><img src="../img/electrician.jpeg" alt=""></li>
+        <li><img src="../img/plumbing.jpg" alt=""></li>
+    </ul>
+
 </nav>
 
 <div id="container">
@@ -49,10 +55,13 @@ $adminUsernameLogginIn = $_SESSION['username'];
 
     <section>
 
+        <div id="quoteApproved" class="quoteStatusStyle">Quote has been approved</div>
+        <div id="quoteDeclined" class="quoteStatusStyle">Quote has been declined</div>
+
         <div class="form_container">
             <form class="form_style" id="searchQuoteForm" name="searchQuoteForm" method="post" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quote here">
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quoteID">
                     <button class="buttonStyleTwo" type="button" id="quoteSearchSubmit" name="quoteSearchSubmit" onclick="searchQuoteAjax()">Click to display</button>
                     <div id="quoteToBeProcessed"><b>Quotes to be processed:</b><br>
                         <?php
@@ -109,6 +118,8 @@ $adminUsernameLogginIn = $_SESSION['username'];
 
 <div id="grey_background"></div>
 <div id="popupbox"></div>
+<div id="quoteApproved" class="loading_style">Quote has been approved</div>
+<div id="quoteDeclined" class="loading_style">Quote has been declined</div>
 
 
 </body>

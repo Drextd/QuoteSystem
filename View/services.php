@@ -28,6 +28,12 @@ require ('../View/header.php');
         <li><a class="hvr-fade" href="contactUS.php">Contact Us</a></li>
     </ul>
 
+    <ul class="rslides">
+        <li><img src="../img/carpentry.jpg" alt=""></li>
+        <li><img src="../img/electrician.jpeg" alt=""></li>
+        <li><img src="../img/plumbing.jpg" alt=""></li>
+    </ul>
+
 </nav>
 
 

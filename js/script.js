@@ -242,15 +242,12 @@ $(document).ready(function (){
 
                     for (var a = 0; a < popQuote.length; a++) {
                         if (popQuote[a].serviceType == startQuotePopulate) {
-                            $('#serviceTime').html('<input value="' + popQuote[a].serviceTime + '">');
-                            $('#servicePrice').html('<input value="' + popQuote[a].servicePrice + '">');
-                               $('#serviceTime').val('' + popQuote[a].serviceTime + '');
-                               $('#servicePrice').val('' + popQuote[a].servicePrice + '');
+                            $('#serviceTime').html('<input value="' + popQuote[a].serviceTime + '">').val('' + popQuote[a].serviceTime + '');
+                            $('#servicePrice').html('<input value="' + popQuote[a].servicePrice + '">').val('' + popQuote[a].servicePrice + '');
                         }
                     }
                 }
             });
-
     });
 });
 
@@ -280,9 +277,14 @@ function changeStatusA($quoteID){
         dataType: 'json',
         method: 'GET',
         success: function changeStatusA() {
-
         }
     });
+
+        $("#quoteApproved").fadeIn().delay(1500).fadeOut();
+
+        setTimeout(function(){
+            window.location.reload();
+        }, 3000);
 }
 
 function changeStatusD($quoteID){
@@ -292,14 +294,14 @@ function changeStatusD($quoteID){
         dataType: 'json',
         method: 'GET',
         success: function changeStatusD() {
-
-
         }
     });
+        $("#quoteDeclined").fadeIn().delay(1500).fadeOut();
+
+        setTimeout(function(){
+            window.location.reload();
+        }, 3000);
 }
-
-
-
 
 // Open Close //
 
@@ -324,18 +326,21 @@ function close_Popup(){
 
 //--     CSS animation functions     --//
 
-function slideRightEffect1(){
-
-    $("#addService").toggleClass('slideRightAnimation');
-}
-
-function slideRightEffect2(){
-
-    $("#searchService").toggleClass('slideRightAnimation');
-}
-
 function closeViewQuote(){
 
     $("#viewQuote").toggleClass('slideRightAnimation');
 }
+
+//--     Slider     --//
+
+$(function() {
+    $(".rslides").responsiveSlides();
+});
+
+//--     Tabs     --//
+
+$( function() {
+    $( "#tabs" ).tabs();
+} );
+
 

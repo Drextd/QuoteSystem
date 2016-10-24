@@ -16,7 +16,6 @@
     text-align: center;
 }
 
-
 #container{
     position: fixed;
     left: 275px;
@@ -75,6 +74,7 @@ nav ul li a{
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
 }
+
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active,
 .buttonStyleTwo:hover, .buttonStyleTwo:focus, .buttonStyleTwo:active,
 .buttonStyleThree:hover, .buttonStyleThree:focus, .buttonStyleThree:active,
@@ -85,12 +85,11 @@ nav ul li a{
 }
 
 .activeTab{
-    background: #6eac2c
+    background: #6eac2c;
 }
 
 section{
     padding: 15px;
-
 }
 
 footer{
@@ -352,13 +351,29 @@ footer{
     text-align: center;
     font-size: 16px;
     font-weight: bold;
-    border: solid 2px black;
+    border: solid 2px #0078ae;
     border-radius: 20px;
+    background-color: #0078ae;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #ffffff;
 }
+
+.quoteStatusStyle{
+    width: 300px;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: solid 2px #0078ae;
+    border-radius: 20px;
+    background-color: #0078ae;
+    color: #ffffff;
+}
+
+
 
 .highlight{
     font-weight: bold;
@@ -398,10 +413,47 @@ footer{
     padding: 10px;
 }
 
+#quoteApproved, #quoteDeclined{
+    display: none;
+}
+
 legend{
     font-weight: bold;
     color: #0078ae;
 }
 
 
+/*  Slider  */
 
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 50% 0px 0px 0px;
+
+}
+
+.rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.rslides img {
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+}

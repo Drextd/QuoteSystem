@@ -42,6 +42,12 @@ $result = getCustomerDetails($customerUsernameLoggedIn);
         <li><a class="hvr-fade, activeTab" href="#">Customer Details</a></li>
     </ul>
 
+    <ul class="rslides">
+        <li><img src="../img/carpentry.jpg" alt=""></li>
+        <li><img src="../img/electrician.jpeg" alt=""></li>
+        <li><img src="../img/plumbing.jpg" alt=""></li>
+    </ul>
+
 </nav>
 
 <div id="container">
