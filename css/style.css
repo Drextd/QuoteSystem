@@ -16,6 +16,23 @@
     text-align: center;
 }
 
+#error_div{
+    display: none;
+    background: #ffffff;
+    padding: 5px;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+#error_div_regi{
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+    display: none;
+}
+
 #container{
     position: fixed;
     left: 275px;
@@ -304,47 +321,6 @@ footer{
     font-size: 14px;
 }
 
-#grey_background{
-    display: none;
-    background: #000000;
-    opacity: .5;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-#popupbox{
-    display: none;
-    background: #ffffff;
-    position: absolute;
-    top: 15%;
-    right: 25%;
-    bottom: 15%;
-    left: 25%;
-}
-
-#error_div{
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    color: red;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-#error_div_regi{
-
-    position: absolute;
-    bottom: 17.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: red;
-    font-weight: bold;
-    font-size: 14px;
-}
-
 .loading_style{
     width: 300px;
     padding: 5px;
@@ -373,8 +349,6 @@ footer{
     color: #ffffff;
 }
 
-
-
 .highlight{
     font-weight: bold;
     font-size: larger;
@@ -389,7 +363,7 @@ footer{
     display: block;
 }
 
-.widthSpacing{
+.widthSpacing, #regiForm{
     margin-left: 40px;
 }
 
@@ -432,7 +406,6 @@ legend{
     width: 100%;
     padding: 0;
     margin: 50% 0px 0px 0px;
-
 }
 
 .rslides li {

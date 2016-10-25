@@ -2,7 +2,7 @@
 <body>
 
 <div class="form_container">
-    <form class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php" onsubmit="return registerValidation()">
+    <form id="regiForm" class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php" onsubmit="return registerValidation()">
         <div>
             <label class="label_style">Username:</label><input class="input_style" type="text" id="customer_Username" name="customer_Username" placeholder="Username" pattern="^[A-Za-z0-9]+$">
         </div>
@@ -27,7 +27,5 @@
         <button class="buttonStyleThree" onclick="close_Popup()" type="button" name="closePopup">Close</button>
 
     </form>
-
-
 </div>
 </body>

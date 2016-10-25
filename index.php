@@ -29,7 +29,9 @@
             </div>
         </form>
     </div>
-    
+
+    <div id="error_div"></div>
+
     <ul>
         <li><a class="hvr-fade, activeTab" href="#">Home</a></li>
         <li><a class="hvr-fade" href="View/services.php">Services</a></li>
@@ -44,8 +46,6 @@
 
 </nav>
 
-
-<div id="error_div"></div>
 <div id="container">
 
     
@@ -55,8 +55,37 @@
 
     <section>
         <div class="content_example2">Business Overview</div>
-        <div class="content_example2">Click here for register form<button class="buttonStyleTwo" type="button" name="open_registration" onclick="openRegistration()">Click to Register</button></div>
+        <div class="content_example2">Click here for register form<button class="buttonStyleTwo" type="button" name="open_registration" onclick="regiForm()">Click to Register</button></div>
     </section>
+
+    <div id="regiForm" class="form_container, showHideSlideRight">
+        <form  class="form_style" name="registerForm" method="post" action="./Controller/registerCustomerProcess.php" onsubmit="return registerValidation()">
+            <div>
+                <label class="label_style">Username:</label><input class="input_style" type="text" id="customer_Username" name="customer_Username" placeholder="Username" pattern="^[A-Za-z0-9]+$">
+            </div>
+            <div>
+                <label class="label_style">Password:</label><input class="input_style" type="text" id="customer_Password" name="customer_Password" placeholder="Password" pattern="^[A-Za-z0-9]+$">
+            </div>
+            <div>
+                <label class="label_style">First Name:</label><input class="input_style" type="text" id="customer_First_Name" name="customer_First_Name" placeholder="First Name" pattern="^[A-Za-z0-9]+$">
+            </div>
+            <div>
+                <label class="label_style">Last Name:</label><input class="input_style" type="text" id="customer_Last_Name" name="customer_Last_Name" placeholder="Last Name" pattern="^[A-Za-z0-9]+$">
+            </div>
+            <div>
+                <label class="label_style">Email:</label><input class="input_style" type="email" id="customer_Email" name="customer_Email" placeholder="Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            </div>
+            <div>
+                <label class="label_style">Phone:</label><input class="input_style" type="text" id="customer_Phone" name="customer_Phone" placeholder="Phone" pattern="^[0-9].{1,10}+$">
+            </div>
+
+            <button class="buttonStyleThree" type="submit" name="register">Register!</button>
+            <button class="buttonStyleThree" type="reset" name="reset_changes">Reset Form</button>
+            <button class="buttonStyleThree" onclick="regiFormClose()" type="button" name="closeRegi">Close</button>
+
+        </form>
+        <div id="error_div_regi"></div>
+    </div>
 
     <footer>
 
@@ -69,10 +98,5 @@
     </footer>
 
 </div>
-
-<div id="grey_background"></div>
-<div id="popupbox"></div>
-<div id="error_div_regi"></div>
-
 </body>
 </html>

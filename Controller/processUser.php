@@ -19,8 +19,9 @@ if(isset($_POST['home_login_submit'])) {
         $_SESSION['username'] = $username;
         echo '<div class="loading_style">Admin Login Successful</div>';
         echo '<script type="text/javascript">openDelayAdmin()</script>';
+        die();
     }
-
+    
     $result_customer = customerCheck($username, $password);
 
     if(!empty($result_customer)) {
@@ -29,9 +30,19 @@ if(isset($_POST['home_login_submit'])) {
         $_SESSION['username'] = $username;
         echo '<div class="loading_style">Customer Login Successful</div>';
         echo '<script type="text/javascript">openDelayCustomer()</script>';
+        die();
+    }
+    
+    if(!in_array("$username", $result_admin)){
+        echo '<div class="loading_style">User does not exist, Please Try Again</div>';
+        echo '<script type="text/javascript">incorrectUserDelay()</script>';
+        die();
     }
 
-    if(empty($result_admin) && empty($result_customer)) {
-        echo "Incorrect Login";
+    if(!in_array("$username", $result_customer)){
+        echo '<div class="loading_style">User does not exist, Please Try Again</div>';
+        echo '<script type="text/javascript">incorrectUserDelay()</script>';
+        die();
     }
+
 }

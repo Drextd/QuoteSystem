@@ -136,9 +136,5 @@ $adminUsernameLoggedIn = $_SESSION['username'];
     </footer>
 
 </div>
-
-<div id="grey_background"></div>
-<div id="popupbox"></div>
-
 </body>
 </html>

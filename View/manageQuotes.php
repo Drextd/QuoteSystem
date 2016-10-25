@@ -116,11 +116,8 @@ $adminUsernameLogginIn = $_SESSION['username'];
 
 </div>
 
-<div id="grey_background"></div>
-<div id="popupbox"></div>
 <div id="quoteApproved" class="loading_style">Quote has been approved</div>
 <div id="quoteDeclined" class="loading_style">Quote has been declined</div>
-
 
 </body>
 </html>

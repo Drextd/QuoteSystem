@@ -37,6 +37,13 @@ function addQuoteDelay(){
         window.location.href = "../View/customer_CP.php";}, 2000);
 }
 
+function incorrectUserDelay(){
+
+    setTimeout(function (){
+        window.location.href = "../index.php";}, 20000);
+}
+
+
 function runLogout(){
     window.location.href = "../Controller/logoutProcess.php";
 }
@@ -48,23 +55,27 @@ function loginValidation(){
     error_div.innerHTML = '';
     
     if(!home_username.checkValidity()) {
-        error_div.style.display = 'block';
+        error_div.style.display = 'inline-block';
         error_div.innerHTML += 'Please enter a valid username<br/>';
+        $('#error_div').delay(4000).fadeOut('slow');
         error++;
     }
     if(home_username.value == ''){
-        error_div.style.display = 'block';
+        error_div.style.display = 'inline-block';
         error_div.innerHTML += 'Please enter a username<br/>';
+        $('#error_div').delay(4000).fadeOut('slow');
         error++;
     }
     if(!home_password.checkValidity()) {
-        error_div.style.display = 'block';
+        error_div.style.display = 'inline-block';
         error_div.innerHTML += 'Please enter a valid password<br/>';
+        $('#error_div').delay(4000).fadeOut('slow');
         error++;
     }
     if(home_password.value == ''){
-        error_div.style.display = 'block';
+        error_div.style.display = 'inline-block';
         error_div.innerHTML += 'Please enter a password<br/>';
+        $('#error_div').delay(4000).fadeOut('slow');
         error++;
     }
     
@@ -81,62 +92,62 @@ function registerValidation(){
     error_div_regi.innerHTML = '';
 
     if(!customer_Username.checkValidity()) {
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a valid username<br/>';
         error++;
     }
     if(customer_Username.value == ''){
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a username<br/>';
         error++;
     }
     if(!customer_Password.checkValidity()) {
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a valid password<br/>';
         error++;
     }
     if(customer_Password.value == ''){
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a password<br/>';
         error++;
     }
     if(!customer_First_Name.checkValidity()) {
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a valid format (Letters only)<br/>';
         error++;
     }
     if(customer_First_Name.value == ''){
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a first name<br/>';
         error++;
     }
     if(!customer_Last_Name.checkValidity()) {
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a valid format (Letters only)<br/>';
         error++;
     }
     if(customer_Last_Name.value == ''){
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a last name<br/>';
         error++;
     }
     if(!customer_Email.checkValidity()) {
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a valid email (Example: email@email.com)<br/>';
         error++;
     }
     if(customer_Email.value == ''){
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter an email<br/>';
         error++;
     }
     if(!customer_Phone.checkValidity()) {
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a valid phone number (Example: 400000000)<br/>';
         error++;
     }
     if(customer_Phone.value == ''){
-        error_div_regi.style.display = 'block';
+        error_div_regi.style.display = 'inline-block';
         error_div_regi.innerHTML += 'Please enter a phone number<br/>';
         error++;
     } 
@@ -147,6 +158,8 @@ function registerValidation(){
         return false;
     }
 }
+
+
 
 // --- Ajax functions --- //
 
@@ -305,23 +318,18 @@ function changeStatusD($quoteID){
 
 // Open Close //
 
-function openRegistration(){
 
-    $("#grey_background").fadeIn();
-    $("#popupbox").fadeIn();
 
-    document.getElementById('grey_background').style.display = "block";
-    document.getElementById('popupbox').style.display = "block";
 
-    jQuery("#popupbox").load("View/registrationPage.php");
+function regiForm(){
+
+    $("#regiForm").toggleClass('slideRightAnimation');
 
 }
 
-function close_Popup(){
-
-    $("#grey_background").fadeOut();
-    $("#popupbox").fadeOut();
-
+function regiFormClose(){
+    document.getElementById('error_div_regi').style.display = 'none';
+    $("#regiForm").toggleClass('slideRightAnimation');
 }
 
 //--     CSS animation functions     --//
@@ -333,14 +341,13 @@ function closeViewQuote(){
 
 //--     Slider     --//
 
-$(function() {
+$(document).ready(function () {
     $(".rslides").responsiveSlides();
 });
 
 //--     Tabs     --//
 
-$( function() {
-    $( "#tabs" ).tabs();
-} );
-
+$(document).ready(function () {
+        $("#tabs").tabs();
+});
 
