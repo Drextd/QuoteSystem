@@ -61,7 +61,7 @@ $adminUsernameLogginIn = $_SESSION['username'];
         <div class="form_container">
             <form class="form_style" id="searchQuoteForm" name="searchQuoteForm" method="post" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quoteID">
+                    <label class="label_style">Search:</label><input class="input_style" type="text" id="quoteSearchInput" name="quoteSearchInput" placeholder="Search quoteID from the list below">
                     <button class="buttonStyleTwo" type="button" id="quoteSearchSubmit" name="quoteSearchSubmit" onclick="searchQuoteAjax()">Click to display</button>
                     <div id="quoteToBeProcessed"><b>Quotes to be processed:</b><br>
                         <?php

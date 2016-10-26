@@ -95,7 +95,8 @@ nav ul li a{
 .hvr-fade:hover, .hvr-fade:focus, .hvr-fade:active,
 .buttonStyleTwo:hover, .buttonStyleTwo:focus, .buttonStyleTwo:active,
 .buttonStyleThree:hover, .buttonStyleThree:focus, .buttonStyleThree:active,
-.buttonStyleFour:hover, .buttonStyleFour:focus, .buttonStyleFour:active{
+.buttonStyleFour:hover, .buttonStyleFour:focus, .buttonStyleFour:active,
+.buttonStyleFive:hover, .buttonStyleFive:focus, .buttonStyleFive:active{
     background-color: #b3d4fc;
     color: #0078ae;
     cursor: pointer;
@@ -225,6 +226,7 @@ footer{
 
 .buttonStyleFour{
     display: inline-block;
+    text-decoration: none;
     color: #ffffff;
     margin: 5px 15px;
     width: 100px;
@@ -245,7 +247,6 @@ footer{
     -webkit-transition-property: color, background-color;
     transition-property: color, background-color;
 }
-
 
 .showHideSlideRight{
     display: none;

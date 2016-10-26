@@ -125,6 +125,28 @@ function changeStatusD($quoteID){
 
 }
 
+function showCustomers(){
+
+    global $conn;
+    $sql = "SELECT customerUsername FROM customer ORDER BY customerUsername ASC";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $showCustomers = $statement->fetchAll();
+    $statement->closeCursor();
+    return $showCustomers;
+}
+
+function showServices(){
+
+    global $conn;
+    $sql = "SELECT serviceID FROM services ORDER BY serviceID ASC";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $showServices = $statement->fetchAll();
+    $statement->closeCursor();
+    return $showServices;
+}
+
 function countQuotes(){
 
     global $conn;

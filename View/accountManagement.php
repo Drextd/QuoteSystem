@@ -7,6 +7,8 @@ if($_SESSION['userType'] == "customer"){
 
 require ('../Controller/userSecurityCheck.php');
 require ('../View/header.php');
+require ('../Model/dbConnect.php');
+require ('../Model/database_functions.php');
 
 $adminUsernameLoggedIn = $_SESSION['username'];
 
@@ -54,10 +56,22 @@ $adminUsernameLoggedIn = $_SESSION['username'];
     </header>
 
     <section>
-        <div class="form_container">
+        <div class="form_container" id="accountManagementContainer">
             <form class="form_style" id="searchCustomerForm" action="#">
                 <div>
-                    <label class="label_style">Search:</label><input class="input_style" type="text" id="searchCustomerInput" name="searchCustomerInput" placeholder="Search customer username"><button class="buttonStyleTwo" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
+                    <label class="label_style">Search:</label><select class="input_style" name="searchCustomerOption">
+                        <option>Select a customer to search</option>
+                            <?php
+
+                            $showCustomers = showCustomers();
+
+                            foreach($showCustomers as $row):
+                                echo "<option value=" . $row['customerUsername'] . ">" . $row['customerUsername'] . "</option>";
+                            endforeach;
+
+                            ?>
+                    </select>
+                    <button class="buttonStyleTwo" type="button" id="searchSubmit" name="searchSubmit" onclick="searchCustomerAjax()" >Search</button>
                 </div>
             </form>
                 <div id="searchCustomer" class="showHideSlideRight">
@@ -92,7 +106,6 @@ $adminUsernameLoggedIn = $_SESSION['username'];
     </section>
 
     <footer>
-        <div id="json"></div>
         <?php 
 
         include 'footer.php';

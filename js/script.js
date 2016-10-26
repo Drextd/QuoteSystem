@@ -159,8 +159,6 @@ function registerValidation(){
     }
 }
 
-
-
 // --- Ajax functions --- //
 
 function searchCustomerAjax(){
@@ -316,10 +314,8 @@ function changeStatusD($quoteID){
         }, 3000);
 }
 
+
 // Open Close //
-
-
-
 
 function regiForm(){
 

@@ -98,7 +98,20 @@ $adminUsernameLoggedIn = $_SESSION['username'];
             <div id="tabs-2">
                 <form class="form_style" id="searchServiceForm" name="searchServiceForm" method="post" action="#">
                     <div>
-                        <label class="label_style">Search:</label><input class="input_style" type="text" id="searchServiceInput" name="searchServiceInput" placeholder="Search serviceID"><button class="buttonStyleTwo" type="button" name="searchServiceSubmit" onclick="searchServiceAjax()">Search</button>
+                        <label class="label_style">Search:</label><select class="input_style" name="searchServiceInput">
+                            <option>Select a Service to search</option>
+                            <?php
+
+                            $showServices = showServices();
+
+                            foreach($showServices as $row):
+                                echo "<option value=" . $row['serviceID'] . ">" . $row['serviceID'] . "</option>";
+                            endforeach;
+
+                            ?>
+
+                        </select>
+                        <button class="buttonStyleTwo" type="button" name="searchServiceSubmit" onclick="searchServiceAjax()">Search</button>
                     </div>
                 </form>
                 <form class="form_style" id="manageServiceForm" name="manageServiceForm" method="post" action="../Controller/updateServiceProcess.php">

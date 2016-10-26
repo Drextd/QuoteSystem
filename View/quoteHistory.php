@@ -127,6 +127,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                             <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price" readonly>
                         </div>
 
+                        <a href="../Controller/genPDF.php" class="buttonStyleFour">View as PDF</a>
                         <button class="buttonStyleFour" type="button" onclick="closeViewQuote()">Close</button>
 
                     </form>
