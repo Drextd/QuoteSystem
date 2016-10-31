@@ -12,7 +12,14 @@ require ('../Model/database_functions.php');
 
 $customerUsernameLoggedIn = $_SESSION['username'];
 
+// PDF Calls
 
+
+
+$pdfCustomerFirstName = pdfCustomerFirstName($customerUsernameLoggedIn);
+$pdfCustomerLastName = pdfCustomerLastName($customerUsernameLoggedIn);
+$pdfCustomerEmail = pdfCustomerEmail($customerUsernameLoggedIn);
+$pdfCustomerPhone = pdfCustomerPhone($customerUsernameLoggedIn);
 
 ?>
 
@@ -69,7 +76,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                 $showCustomerQuotes = showCustomerQuotesPending($customerID);
                 
                 foreach($showCustomerQuotes as $row):
-                    echo '<span class="spacingCustomer">' . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . '<button id="clickView" class="buttonStyleFour" type="submit" onclick="viewClick('.$row['quoteID'].')" >View</button></span>';
+                    echo '<span class="spacingCustomer">' . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . '<button id="clickView" class="buttonStyleFour" type="submit" name="viewQuote" onclick="viewClick('.$row['quoteID'].')" >View</button></span>';
                 endforeach;
 
                 ?>
@@ -84,7 +91,7 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                 $showCustomerQuotes = showCustomerQuotesApproved($customerID);
 
                 foreach($showCustomerQuotes as $row):
-                    echo '<span class="spacingCustomer">' . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . '<button id="clickView" class="buttonStyleFour" type="submit" onclick="viewClick('.$row['quoteID'].')" >View</button></span>';
+                    echo '<span class="spacingCustomer">' . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . '<button id="clickView" class="buttonStyleFour" type="submit" name="viewQuote" onclick="viewClick('.$row['quoteID'].')" >View</button></span>';
                 endforeach;
 
 
@@ -100,34 +107,39 @@ $customerUsernameLoggedIn = $_SESSION['username'];
                 $showCustomerQuotes = showCustomerQuotesDeclined($customerID);
 
                 foreach($showCustomerQuotes as $row):
-                    echo '<span class="spacingCustomer">' . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . '<button id="clickView" class="buttonStyleFour" type="submit" onclick="viewClick('.$row['quoteID'].')" >View</button></span>';
+                    echo '<span class="spacingCustomer">' . $row['quoteID'] . '<span class="widthSpacing"></span>' . $row['status'] . '<button id="clickView" class="buttonStyleFour" type="submit" name="viewQuote" onclick="viewClick('.$row['quoteID'].')" >View</button></span>';
                 endforeach;
 
                 ?>
             </div>
             <div class="quoteHistoryContainer">
                 <div id="viewQuote" class="showHideSlideRight">
-                    <form class="form_style" id="viewQuote" name="viewQuote">
+                    <form class="form_style" id="viewQuote" name="viewQuote" action="../Controller/genPDF.php" method="post">
                         <div>
-                            <label class="label_style">Quote ID:</label><input class="input_style" type="text" id="quoteID" name="quoteID" placeholder="Quote ID" readonly>
+                            <label class="label_style">Quote ID:</label><input class="input_style" type="text" id="quoteID" name="quoteID" value="" readonly>
                         </div>
                         <div>
-                            <input class="input_style" id="customerID" name="customerID" type="hidden"  readonly>
+                            <input id="customerID" name="customerID" type="hidden">
+                            <input id="customerUsername" name="customerUsername" type="hidden" value="<?php echo $customerUsernameLoggedIn ?>">
+                            <input id="customerFirstName" name="customerFirstName" type="hidden" value="<?php echo $pdfCustomerFirstName ?>">
+                            <input id="customerLastName" name="customerLastName" type="hidden" value="<?php echo $pdfCustomerLastName ?>">
+                            <input id="customerEmail" name="customerEmail" type="hidden" value="<?php echo $pdfCustomerEmail?>">
+                            <input id="customerPhone" name="customerPhone" type="hidden" value="<?php echo $pdfCustomerPhone ?>">
                         </div>
                         <div>
-                            <label class="label_style">Job Category:</label><input class="input_style" type="text" id="jobCategory" name="jobCategory" placeholder="Job Category" readonly>
+                            <label class="label_style">Job Category:</label><input class="input_style" type="text" id="jobCategory" name="jobCategory" value="" readonly>
                         </div>
                         <div>
-                            <label class="label_style">Service Type:</label><input class="input_style" type="text" id="serviceType" name="serviceType" placeholder="Service Type" readonly>
+                            <label class="label_style">Service Type:</label><input class="input_style" type="text" id="serviceType" name="serviceType" value="" readonly>
                         </div>
                         <div>
-                            <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" placeholder="Service Time" readonly>
+                            <label class="label_style">Service Time:</label><input class="input_style" type="text" id="serviceTime" name="serviceTime" value="" readonly>
                         </div>
                         <div>
-                            <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" placeholder="Service Price" readonly>
+                            <label class="label_style">Service Price:</label><input class="input_style" type="text" id="servicePrice" name="servicePrice" value=""  readonly>
                         </div>
 
-                        <a href="../Controller/genPDF.php" class="buttonStyleFour">View as PDF</a>
+                        <button type="submit" class="buttonStyleFour">View as PDF</button>
                         <button class="buttonStyleFour" type="button" onclick="closeViewQuote()">Close</button>
 
                     </form>

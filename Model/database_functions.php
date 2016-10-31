@@ -203,6 +203,60 @@ function showCustomerQuotesDeclined($customerID){
     return $showAllQuotes;
 }
 
+function pdfQuoteStatus($quoteID){
+
+    global $conn;
+    $sql = "SELECT status FROM quotedatabase WHERE quoteID = '". $quoteID."'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $pdfQuoteStatus = $statement->fetch(PDO::FETCH_COLUMN);
+    $statement->closeCursor();
+    return $pdfQuoteStatus;
+}
+
+function pdfCustomerFirstName($customerUsernameLoggedIn){
+
+    global $conn;
+    $sql = "SELECT customerFirstName FROM customer WHERE customerUsername = '". $customerUsernameLoggedIn ."'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $pdfCustomerPhone = $statement->fetch(PDO::FETCH_COLUMN);
+    $statement->closeCursor();
+    return $pdfCustomerPhone;
+}
+
+function pdfCustomerLastName($customerUsernameLoggedIn){
+
+    global $conn;
+    $sql = "SELECT customerLastName FROM customer WHERE customerUsername = '". $customerUsernameLoggedIn ."'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $pdfCustomerPhone = $statement->fetch(PDO::FETCH_COLUMN);
+    $statement->closeCursor();
+    return $pdfCustomerPhone;
+}
+
+function pdfCustomerEmail($customerUsernameLoggedIn){
+
+    global $conn;
+    $sql = "SELECT customerEmail FROM customer WHERE customerUsername = '". $customerUsernameLoggedIn ."'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $pdfCustomerEmail = $statement->fetch(PDO::FETCH_COLUMN);
+    $statement->closeCursor();
+    return $pdfCustomerEmail;
+}
+
+function pdfCustomerPhone($customerUsernameLoggedIn){
+
+    global $conn;
+    $sql = "SELECT customerPhone FROM customer WHERE customerUsername = '". $customerUsernameLoggedIn ."'";
+    $statement = $conn->prepare($sql);
+    $statement->execute();
+    $pdfCustomerPhone = $statement->fetch(PDO::FETCH_COLUMN);
+    $statement->closeCursor();
+    return $pdfCustomerPhone;
+}
 
 function searchQuote($searchQuote){
 
