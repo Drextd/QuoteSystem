@@ -40,7 +40,7 @@ function addQuoteDelay(){
 function incorrectUserDelay(){
 
     setTimeout(function (){
-        window.location.href = "../index.php";}, 20000);
+        window.location.href = "../index.php";}, 2000);
 }
 
 
@@ -312,6 +312,30 @@ function changeStatusD($quoteID){
         setTimeout(function(){
             window.location.reload();
         }, 3000);
+}
+
+//    Mobile Menus (User and Nav)    //
+
+function openCloseUserMob(){
+    
+        if( document.getElementById('loginContainerMobile').style.display === 'block' )
+            document.getElementById('loginContainerMobile').style.display = "none";
+        else
+            document.getElementById('loginContainerMobile').style.display = "block";
+
+    $('#loginContainerMobile').toggleClass('openCloseUserMob');
+    
+}
+
+function openCloseNavMob(){
+
+    if( document.getElementById('navContainerMobile').style.display === 'block' )
+        document.getElementById('navContainerMobile').style.display = "none";
+    else
+        document.getElementById('navContainerMobile').style.display = "block";
+
+    $('#navContainerMobile').toggleClass('openCloseUserMob');
+
 }
 
 

@@ -33,12 +33,9 @@ $pdfCustomerPhone = pdfCustomerPhone($customerUsernameLoggedIn);
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$customerUsernameLoggedIn" ?></div>
+            <div class="loggedInStyle"><?php echo "$customerUsernameLoggedIn" ?></div><button class="buttonStyle" onclick="runLogout()">Logout</button>
         </div>
-
-        <div>
-            <button class="buttonStyle" onclick="runLogout()">Logout</button>
-        </div>
+        
     </div>
 
     <ul>
@@ -60,8 +57,31 @@ $pdfCustomerPhone = pdfCustomerPhone($customerUsernameLoggedIn);
 
     <header>
         <h1>QuoteSystem - TAFE Project</h1>
+        <div id="mobIconContainer">
+            <div id="userLogonDD"><img src="../img/user.png" alt="user" onclick="openCloseUserMob()"></div>
+            <div id="navDD"><img src="../img/nav.png" alt="nav" onclick="openCloseNavMob()"></div>
+        </div>
     </header>
 
+    <div id="loginContainerMobile" class="openCloseMob">
+        <div>
+            <label class="loggedInStyle">Logged in as:</label>
+        </div>
+
+        <div>
+            <div class="loggedInStyle"><?php echo "$customerUsernameLoggedIn" ?></div><button class="buttonStyle" onclick="runLogout()">Logout</button>
+        </div>
+    </div>
+
+    <div>
+
+        <ul id="navContainerMobile" class="openCloseMob">
+            <li><a  href="customer_CP.php">Customer Home</a></li>
+            <li><a  href="startQuote.php">Start a Quote</a></li>
+            <li><a  class="activeTab" href="#">Quote History</a></li>
+            <li><a  href="customerDetails.php">Customer Details</a></li>
+        </ul>
+    </div>
 
 
     <section>

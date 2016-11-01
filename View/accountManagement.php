@@ -26,12 +26,9 @@ $adminUsernameLoggedIn = $_SESSION['username'];
         </div>
 
         <div>
-            <div class="loggedInStyle"><?php echo "$adminUsernameLoggedIn" ?></div>
+            <div class="loggedInStyle"><?php echo "$adminUsernameLoggedIn" ?></div><button class="buttonStyle" onclick="runLogout()">Logout</button>
         </div>
-
-        <div>
-            <button class="buttonStyle" onclick="runLogout()">Logout</button>
-        </div>
+        
     </div>
 
     <ul>
@@ -53,7 +50,30 @@ $adminUsernameLoggedIn = $_SESSION['username'];
 
     <header>
         <h1>QuoteSystem - TAFE Project</h1>
+        <div id="mobIconContainer">
+            <div id="userLogonDD"><img src="../img/user.png" alt="user" onclick="openCloseUserMob()"></div>
+            <div id="navDD"><img src="../img/nav.png" alt="nav" onclick="openCloseNavMob()"></div>
+        </div>
     </header>
+
+    <div id="loginContainerMobile" class="openCloseMob">
+        <div>
+            <label class="loggedInStyle">Logged in as:</label>
+        </div>
+
+        <div>
+            <div class="loggedInStyle"><?php echo "$adminUsernameLoggedIn" ?></div><button class="buttonStyle" onclick="runLogout()">Logout</button>
+        </div>
+    </div>
+
+    <div>
+        <ul id="navContainerMobile" class="openCloseMob">
+            <li><a  href="admin_CP.php">Admin Home</a></li>
+            <li><a  class="activeTab" href="#">Account Management</a></li>
+            <li><a  href="manageQuotes.php">Manage Quotes</a></li>
+            <li><a  href="manageServices.php">Manage Services</a></li>
+        </ul>
+    </div>
 
     <section>
         <div class="form_container" id="accountManagementContainer">

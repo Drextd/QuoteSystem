@@ -68,7 +68,7 @@ $pdf->Ln(10);
 $pdf->SetFont('Times','U',16);
 $pdf->Cell(0,10,'Customer Details',0,1,'L');
 $pdf->SetFont('Times','',12);
-$pdf->Cell(0,10,'Customer Username:'. " " . " " . " " . " " . " " . " " . " " .$customerUsername,0,1,'L');
+$pdf->Cell(0,10,'Customer Username:'. " " . " " . " " . " " . " " . " " .$customerUsername,0,1,'L');
 $pdf->Cell(0,10,'Customer First Name:'. " " . " " . " " . " " . " " .$customerFirstName,0,1,'L');
 $pdf->Cell(0,10,'Customer Last Name:'. " " . " " . " " . " " . " " .$customerLastName,0,1,'L');
 $pdf->Cell(50,10,'Customer Email:'. " " . " " . " " . " " . " " . " " . " " . " " . " " . " " . " " . " " . " " .$customerEmail,0,1,'L');
